@@ -21,44 +21,60 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;op
 a{text-decoration:none;color:inherit} img{max-width:100%;display:block} button{font:inherit;border:none;background:none}
 .container{width:min(1180px,calc(100% - 32px));margin-inline:auto}.section{position:relative;padding:92px 0}.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:12px;top:12px;z-index:999;background:#fff;padding:10px 14px;border-radius:10px}
 .intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 20%, rgba(255,217,117,.62), transparent 20rem),radial-gradient(circle at 50% 50%, rgba(255,150,41,.18), transparent 24rem),linear-gradient(180deg,#fff8e5 0%,#ffe8b9 100%);transition:opacity .7s ease, visibility .7s ease}
-body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{position:relative;width:min(92vw,760px);min-height:430px;display:grid;place-items:center;text-align:center}.intro-glow{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle, rgba(255,217,117,.64), rgba(255,84,64,.16) 58%, transparent 72%);filter:blur(10px);animation:pulse 1.9s ease-in-out infinite}.intro-chef{position:relative;z-index:2;width:min(54vw,240px);filter:drop-shadow(0 18px 36px rgba(132,72,16,.22));animation:bob 1.9s ease-in-out infinite}.intro-copy{position:relative;z-index:2;display:grid;gap:8px;margin-top:10px}.intro-kicker{color:#a54b00;letter-spacing:.28em;font-size:.74rem;text-transform:uppercase;font-weight:900}.intro-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(3.1rem,11vw,6.2rem);line-height:.86;color:var(--rojo);text-shadow:0 10px 26px rgba(255,255,255,.35)}.intro-title span{color:var(--naranja)}.intro-loading{color:#7f3b10;font-weight:800}.loading-bar{width:min(78vw,320px);height:12px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.58);box-shadow:inset 0 0 0 1px rgba(207,47,40,.08)}.loading-bar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--amarillo),var(--naranja),var(--rojo-2));box-shadow:0 0 24px rgba(255,150,41,.35);animation:loading 1.15s ease forwards}.skip-intro{position:absolute;right:18px;bottom:18px;border:1px solid rgba(207,47,40,.14);color:#8d3c12;background:rgba(255,255,255,.62);border-radius:999px;padding:10px 16px;cursor:pointer;backdrop-filter:blur(10px)}
-.nav{position:sticky;top:0;z-index:200;backdrop-filter:blur(16px);background:rgba(255,249,239,.82);border-bottom:1px solid rgba(207,47,40,.08)}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav-brand{display:flex;align-items:center;gap:14px;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.04em}.nav-brand img{width:84px;height:54px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(242,181,64,.24))}.nav-links{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}.nav-links a{padding:10px 14px;border-radius:999px;color:#8b4a22;font-size:.87rem;font-weight:900}.nav-links a:hover{background:rgba(255,217,117,.28);color:#601f08}
+body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{position:relative;width:min(92vw,760px);min-height:410px;display:grid;place-items:center;text-align:center;overflow:visible}.intro-glow{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle, rgba(255,217,117,.64), rgba(255,84,64,.16) 58%, transparent 72%);filter:blur(10px);animation:pulse 1.9s ease-in-out infinite}.intro-chef{position:relative;z-index:2;width:min(54vw,220px);height:auto;filter:drop-shadow(0 18px 36px rgba(132,72,16,.22));animation:bob 1.9s ease-in-out infinite;background:rgba(255,255,255,.08);border-radius:18px;padding:0}.intro-copy{position:relative;z-index:2;display:grid;gap:8px;margin-top:10px}.intro-kicker{color:#a54b00;letter-spacing:.28em;font-size:.74rem;text-transform:uppercase;font-weight:900}.intro-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(3.1rem,11vw,6.2rem);line-height:.86;color:var(--rojo);text-shadow:0 10px 26px rgba(255,255,255,.35)}.intro-title span{color:var(--naranja)}.intro-loading{color:#7f3b10;font-weight:800}.loading-bar{width:min(78vw,320px);height:12px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.58);box-shadow:inset 0 0 0 1px rgba(207,47,40,.08)}.loading-bar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--amarillo),var(--naranja),var(--rojo-2));box-shadow:0 0 24px rgba(255,150,41,.35);animation:loading 1.15s ease forwards}.skip-intro{position:absolute;right:18px;bottom:18px;border:1px solid rgba(207,47,40,.14);color:#8d3c12;background:rgba(255,255,255,.62);border-radius:999px;padding:10px 16px;cursor:pointer;backdrop-filter:blur(10px)}
+.nav{position:sticky;top:0;z-index:200;backdrop-filter:blur(16px);background:rgba(255,249,239,.82);border-bottom:1px solid rgba(207,47,40,.08)}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav-brand{display:flex;align-items:center;gap:14px;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.04em}.nav-brand img{width:72px;height:auto;max-height:48px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(242,181,64,.24));background:rgba(255,255,255,.96);padding:4px 6px;border-radius:10px}.nav-links{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}.nav-links a{padding:10px 14px;border-radius:999px;color:#8b4a22;font-size:.87rem;font-weight:900}.nav-links a:hover{background:rgba(255,217,117,.28);color:#601f08}
 .badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:10px 15px;border-radius:999px;background:linear-gradient(135deg,#fff6d9,#ffe5a5);border:1px solid rgba(242,181,64,.24);box-shadow:0 10px 24px rgba(242,181,64,.14);color:#9b4d12;font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 22px;border-radius:999px;font-weight:900;cursor:pointer;transition:transform .24s ease, box-shadow .24s ease, filter .24s ease;position:relative;overflow:hidden}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, transparent 24%, rgba(255,255,255,.42), transparent 78%);transform:translateX(-130%);transition:transform .7s ease}.btn:hover::after{transform:translateX(130%)}.btn:hover{transform:translateY(-4px)}.btn-primary{background:linear-gradient(135deg,var(--rojo-2),var(--rojo),#8e1717);color:#fff;box-shadow:0 18px 34px rgba(207,47,40,.26)}.btn-gold{background:linear-gradient(135deg,#fff0b1,var(--dorado),#ffbc4b);color:#612500;box-shadow:0 18px 34px rgba(242,181,64,.24)}.btn-ghost{background:rgba(255,255,255,.72);border:1px solid rgba(242,181,64,.28);backdrop-filter:blur(10px);color:#6a2b10}.btn-wa{background:linear-gradient(135deg,#25d366,#1bb85b);color:#fff;box-shadow:0 16px 32px rgba(37,211,102,.26)}
 .hero{position:relative;min-height:calc(100vh - 76px);display:grid;align-items:center;padding:70px 0 56px;overflow:hidden}.hero::before{content:"";position:absolute;right:-160px;top:-160px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle, rgba(255,217,117,.64) 0%, rgba(255,217,117,.22) 42%, transparent 72%)}.hero::after{content:"";position:absolute;left:-120px;bottom:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(255,84,64,.16), transparent 68%)}.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.9fr);gap:42px;align-items:center}.hero-copy{display:grid;gap:24px}.hero-copy h1{font-family:"Playfair Display",serif;font-size:clamp(3.1rem,8vw,6.8rem);line-height:.9;letter-spacing:-.05em;color:#64230e;max-width:11ch}.hero-copy h1 .gold{color:var(--naranja)}.hero-copy h1 .red{color:var(--rojo)}.hero-copy p{max-width:62ch;color:#7b4b28;font-size:1.08rem;line-height:1.8}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.proof-card{padding:18px;border-radius:22px;border:1px solid rgba(242,181,64,.18);background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,248,235,.88));box-shadow:var(--shadow-soft)}.proof-card strong{display:block;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.04em}.proof-card span{display:block;color:#8a542c;font-size:.86rem}
-.hero-visual{position:relative;min-height:620px;display:grid;place-items:center}.visual-wrap{position:relative;width:min(100%,540px);display:grid;place-items:center}.pizza-halo{position:absolute;inset:8px 4px;border-radius:36px;background:linear-gradient(135deg,#fff0b8,#ffd76d 55%,#ffbe69 100%);opacity:.45;filter:blur(.3px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4),0 20px 60px rgba(242,181,64,.24)}.pizza-ring{position:absolute;width:430px;height:430px;border-radius:50%;border:18px solid rgba(255,183,0,.16);border-top-color:rgba(207,47,40,.18);border-bottom-color:rgba(94,168,79,.2);animation:spinSlow 18s linear infinite}.pizza-ring::before{content:"";position:absolute;inset:28px;border-radius:50%;border:10px dashed rgba(207,47,40,.12)}.hero-chef{position:relative;z-index:2;width:min(100%,430px);filter:drop-shadow(0 18px 34px rgba(115,45,10,.18));animation:chefJump 5s ease-in-out infinite}.brand-ribbon{position:absolute;z-index:3;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(242,181,64,.2);backdrop-filter:blur(8px);box-shadow:var(--shadow)}.brand-ribbon strong{display:block;font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--rojo);line-height:.95}.brand-ribbon span{display:block;color:#9d4c16;font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.brand-ribbon.top{right:0;top:20px}.brand-ribbon.bottom{left:0;bottom:16px}.brand-chip{position:absolute;left:18px;bottom:22px;z-index:4;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.88);box-shadow:var(--shadow-soft);border:1px solid rgba(207,47,40,.08)}.brand-chip img{width:190px;height:auto;display:block}.floating-ingredient{position:absolute;z-index:3;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#fff8dc,#ffd66f);box-shadow:var(--shadow);font-size:1.85rem;color:#6b2506;animation:floaty 4.6s ease-in-out infinite}.floating-ingredient.one{left:-8px;top:16px}.floating-ingredient.two{right:2px;top:12px;animation-delay:1s}.floating-ingredient.three{left:10px;bottom:14px;animation-delay:2s}.floating-ingredient.four{right:-10px;bottom:18px;animation-delay:1.4s}
+.hero-visual{position:relative;min-height:580px;display:grid;place-items:center}.visual-wrap{position:relative;width:min(100%,520px);display:grid;place-items:center;overflow:visible}.pizza-halo{position:absolute;inset:8px 4px;border-radius:36px;background:linear-gradient(135deg,#fff0b8,#ffd76d 55%,#ffbe69 100%);opacity:.45;filter:blur(.3px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4),0 20px 60px rgba(242,181,64,.24);pointer-events:none}.pizza-ring{position:absolute;width:430px;height:430px;border-radius:50%;border:18px solid rgba(255,183,0,.16);border-top-color:rgba(207,47,40,.18);border-bottom-color:rgba(94,168,79,.2);animation:spinSlow 18s linear infinite}.pizza-ring::before{content:"";position:absolute;inset:28px;border-radius:50%;border:10px dashed rgba(207,47,40,.12)}.hero-chef{position:relative;z-index:2;width:min(100%,410px);height:auto;filter:drop-shadow(0 18px 34px rgba(115,45,10,.18));animation:chefJump 5s ease-in-out infinite;background:rgba(255,255,255,.08);border-radius:18px;padding:0}.brand-ribbon{position:absolute;z-index:3;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(242,181,64,.2);backdrop-filter:blur(8px);box-shadow:var(--shadow)}.brand-ribbon strong{display:block;font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--rojo);line-height:.95}.brand-ribbon span{display:block;color:#9d4c16;font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.brand-ribbon.top{right:0;top:20px}.brand-ribbon.bottom{left:0;bottom:16px}.brand-chip{position:absolute;left:18px;bottom:22px;z-index:4;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.98);box-shadow:var(--shadow-soft);border:1px solid rgba(207,47,40,.08)}.brand-chip img{width:170px;height:auto;display:block;background:rgba(255,255,255,.98);border-radius:12px;padding:6px 8px}.floating-ingredient{position:absolute;z-index:3;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#fff8dc,#ffd66f);box-shadow:var(--shadow);font-size:1.85rem;color:#6b2506;animation:floaty 4.6s ease-in-out infinite}.floating-ingredient.one{left:-8px;top:16px}.floating-ingredient.two{right:2px;top:12px;animation-delay:1s}.floating-ingredient.three{left:10px;bottom:14px;animation-delay:2s}.floating-ingredient.four{right:-10px;bottom:18px;animation-delay:1.4s}
 .scroll-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:grid;justify-items:center;gap:8px;color:#9b5d2c;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}.scroll-cue span{width:2px;height:30px;border-radius:99px;background:linear-gradient(var(--naranja),transparent);animation:down 1.5s ease-in-out infinite}.marquee{overflow:hidden;border-block:1px solid rgba(242,181,64,.22);background:linear-gradient(90deg,#fff1c5,#ffd86f,#ffe3a9)}.marquee-track{display:flex;width:max-content;animation:marquee 24s linear infinite}.marquee span{padding:18px 26px;color:#8a3812;font-weight:900;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
 .section-head{display:grid;gap:14px;justify-items:start;max-width:760px;margin-bottom:34px}.section-head h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,4.5rem);line-height:.96;letter-spacing:-.03em;color:#5a1d0f}.section-head p{max-width:64ch;color:var(--muted);font-size:1.03rem;line-height:1.75}
 .card{background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,250,240,.93));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
 .menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.menu-shot{position:relative;overflow:hidden;border-radius:30px;min-height:320px;background:#fff2d6;border:1px solid rgba(242,181,64,.18);box-shadow:0 28px 60px rgba(145,66,18,.18);cursor:pointer;isolation:isolate}.menu-shot img{width:100%;height:100%;min-height:360px;object-fit:cover;transition:transform .6s ease, filter .6s ease}.menu-shot::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(103,35,12,.74));z-index:1;pointer-events:none}.menu-shot::after{content:"Toca para ampliar";position:absolute;right:18px;top:18px;z-index:2;padding:10px 14px;border-radius:999px;color:#5c2200;background:linear-gradient(135deg,#fff3b5,var(--dorado));font-weight:900;box-shadow:0 10px 24px rgba(242,181,64,.28)}.menu-shot:hover img{transform:scale(1.055);filter:saturate(1.08) contrast(1.02)}.menu-caption{position:absolute;left:22px;right:22px;bottom:22px;z-index:2}.menu-caption small{display:inline-flex;color:#ffe7a8;text-transform:uppercase;letter-spacing:.16em;font-weight:900;font-size:.72rem}.menu-caption h3{font-family:"Playfair Display",serif;font-size:2rem;margin-top:4px;color:#fff}.menu-caption p{margin-top:6px;color:rgba(255,255,255,.86);max-width:30ch}
 .sedes-wrap{position:relative}.sedes-wrap::before{content:"";position:absolute;inset:auto 0 -26px;height:40px;background:radial-gradient(circle at 20px -2px, transparent 12px, rgba(255,212,104,.38) 13px) repeat-x;background-size:42px 24px;opacity:.9}
-.sedes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.sede{position:relative;padding:24px;display:grid;gap:16px;overflow:hidden;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;background:linear-gradient(180deg,#fffef9,#fff7e7)}.sede::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--accent, linear-gradient(90deg,var(--rojo),var(--naranja),var(--amarillo)));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}.sede::after{content:"";position:absolute;right:-36px;bottom:-50px;width:140px;height:140px;border-radius:50%;background:var(--glow, rgba(255,216,110,.22));pointer-events:none}.sede:hover{transform:translateY(-8px) rotate(-.5deg);border-color:rgba(242,181,64,.28);box-shadow:0 34px 70px rgba(145,66,18,.2)}.sede:hover::before{transform:scaleX(1)}.sede-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.sede-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;font-size:1.7rem;background:linear-gradient(135deg,#fff5ca,#ffd870);border:1px solid rgba(242,181,64,.18);box-shadow:0 10px 24px rgba(242,181,64,.18)}.sede-status{padding:8px 11px;border-radius:999px;font-size:.72rem;font-weight:900;color:#9d4a14;background:#fff7d8;border:1px solid rgba(242,181,64,.16)}.sede h3{font-family:"Bebas Neue",sans-serif;font-size:2.1rem;letter-spacing:.04em;line-height:.95;color:#6a240b}.sede-sub{display:flex;align-items:center;gap:8px;color:#996140;font-weight:700}.sede-info{display:grid;gap:11px;color:#845127;line-height:1.55;font-size:.96rem}.info-row{display:flex;align-items:flex-start;gap:10px}.info-row .emoji{width:20px;flex:0 0 20px;line-height:1.3}.sede-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.sede-actions .btn{flex:1 1 130px;min-height:46px;padding:12px 14px;font-size:.9rem}
+.sedes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.sede{position:relative;padding:24px;display:grid;gap:16px;overflow:hidden;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;background:linear-gradient(180deg,#fffef9,#fff7e7)}.sede::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--accent, linear-gradient(90deg,var(--rojo),var(--naranja),var(--amarillo)));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}.sede::after{content:"";position:absolute;right:-36px;bottom:-50px;width:140px;height:140px;border-radius:50%;background:var(--glow, rgba(255,216,110,.22));pointer-events:none;z-index:0}.sede:hover{transform:translateY(-8px) rotate(-.5deg);border-color:rgba(242,181,64,.28);box-shadow:0 34px 70px rgba(145,66,18,.2)}.sede:hover::before{transform:scaleX(1)}.sede-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.sede-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;font-size:1.7rem;background:linear-gradient(135deg,#fff5ca,#ffd870);border:1px solid rgba(242,181,64,.18);box-shadow:0 10px 24px rgba(242,181,64,.18);flex:0 0 auto;position:relative;z-index:1;overflow:hidden}.sede-status{padding:8px 11px;border-radius:999px;font-size:.72rem;font-weight:900;color:#9d4a14;background:#fff7d8;border:1px solid rgba(242,181,64,.16)}.sede h3{font-family:"Bebas Neue",sans-serif;font-size:2.1rem;letter-spacing:.04em;line-height:.95;color:#6a240b}.sede-sub{display:flex;align-items:center;gap:8px;color:#996140;font-weight:700}.sede-info{display:grid;gap:11px;color:#845127;line-height:1.55;font-size:.96rem}.info-row{display:flex;align-items:flex-start;gap:10px}.info-row .emoji{width:20px;flex:0 0 20px;line-height:1.3}.sede-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.sede-actions .btn{flex:1 1 130px;min-height:46px;padding:12px 14px;font-size:.9rem}
 .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch}.story-card,.focus-card{padding:32px;position:relative;overflow:hidden}.story-card::after,.focus-card::after{content:"";position:absolute;right:-40px;bottom:-50px;width:150px;height:150px;border-radius:50%;background:rgba(255,217,117,.22)}.story-card h3,.focus-card h3{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1;color:#68220c;margin:16px 0 14px}.story-card p,.focus-card p{color:#7a4826;line-height:1.8}.story-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.story-pills span{padding:10px 14px;border-radius:999px;color:#98420d;background:#fff6da;border:1px solid rgba(242,181,64,.18);font-weight:900;font-size:.86rem}.focus-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.stat{padding:24px 18px;min-height:150px;display:grid;align-content:center;gap:8px;background:linear-gradient(135deg,#fffef7,#fff4d6);border-radius:22px;border:1px solid rgba(242,181,64,.14)}.stat strong{font-family:"Bebas Neue",sans-serif;font-size:2.4rem;letter-spacing:.04em;color:var(--rojo)}.stat span{color:#85512a;font-weight:800}
 .order-band{padding:34px;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#ffcc4d 0%,#ffac30 45%,#ff7946 100%);overflow:hidden}.order-copy{position:relative;z-index:1;display:grid;gap:18px}.order-copy h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,4rem);line-height:.96;color:#65210c}.order-copy p{color:#7a4927;line-height:1.75}.order-links{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.order-link{padding:18px;border-radius:22px;background:rgba(255,255,255,.84);border:1px solid rgba(242,181,64,.16);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .25s ease, background .25s ease;box-shadow:0 10px 24px rgba(145,66,18,.08)}.order-link:hover{transform:translateY(-4px);background:#fff}.order-link strong{display:block;color:#6b240b}.order-link small{color:#8f5c33}
-.footer{padding:46px 0 34px;background:linear-gradient(180deg,#fff4d2,#ffe7b6);text-align:center;border-top:1px solid rgba(242,181,64,.18)}.footer-logo{width:min(360px,86vw);margin:0 auto 18px;filter:drop-shadow(0 10px 24px rgba(242,181,64,.25))}.footer p{color:#8d4b1e;line-height:1.7;max-width:60ch;margin:0 auto}.floating-cta{position:fixed;right:18px;bottom:18px;z-index:190;display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(135deg,#25d366,#1bb85b);color:#fff;font-weight:900;box-shadow:0 18px 34px rgba(37,211,102,.28);border:2px solid rgba(255,255,255,.55)}
+.footer{padding:46px 0 34px;background:linear-gradient(180deg,#fff4d2,#ffe7b6);text-align:center;border-top:1px solid rgba(242,181,64,.18)}.footer-logo{width:min(320px,86vw);margin:0 auto 18px;filter:drop-shadow(0 10px 24px rgba(242,181,64,.25));background:rgba(255,255,255,.96);border-radius:14px;padding:8px 10px}.footer p{color:#8d4b1e;line-height:1.7;max-width:60ch;margin:0 auto}.floating-cta{position:fixed;right:18px;bottom:18px;z-index:190;display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(135deg,#25d366,#1bb85b);color:#fff;font-weight:900;box-shadow:0 18px 34px rgba(37,211,102,.28);border:2px solid rgba(255,255,255,.55)}
 .lightbox{position:fixed;inset:0;z-index:9998;display:none;place-items:center;padding:28px;background:rgba(85,28,10,.78);backdrop-filter:blur(8px)}.lightbox.open{display:grid}.lightbox img{max-width:min(96vw,1280px);max-height:86vh;object-fit:contain;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.35)}.lightbox-close{position:fixed;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.16);font-size:1.4rem;cursor:pointer}.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}.reveal.visible{opacity:1;transform:none}
 @keyframes loading{from{width:0}to{width:100%}}@keyframes pulse{0%,100%{transform:scale(.97)}50%{transform:scale(1.04)}}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes chefJump{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-10px) rotate(8deg)}}@keyframes spinSlow{to{transform:rotate(360deg)}}@keyframes down{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(8px);opacity:1}}@keyframes marquee{to{transform:translateX(-50%)}}
 @media (max-width:980px){.hero-grid,.story-grid,.order-band{grid-template-columns:1fr}.hero-copy{text-align:center;justify-items:center}.sedes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:720px){.section{padding:72px 0}.nav-inner{justify-content:center;flex-wrap:wrap;padding:12px 0}.nav-links{order:3;width:100%;justify-content:center}.hero{padding-top:54px}.hero-proof,.menu-grid,.sedes-grid,.focus-stats,.order-links{grid-template-columns:1fr}.hero-visual{min-height:430px}.menu-shot img{min-height:260px}.pizza-ring{width:300px;height:300px}.floating-ingredient{width:64px;height:64px;font-size:1.4rem}.brand-ribbon{padding:12px 14px}.brand-ribbon strong{font-size:1.55rem}.brand-chip{position:static;margin-top:14px}.floating-cta{right:12px;left:12px;bottom:12px;justify-content:center}.intro-chef{width:min(60vw,210px)}}
+@media (max-width:720px){.section{padding:72px 0}.nav-inner{justify-content:center;flex-wrap:wrap;padding:12px 0}.nav-links{order:3;width:100%;justify-content:center}.hero{padding-top:54px}.hero-proof,.menu-grid,.sedes-grid,.focus-stats,.order-links{grid-template-columns:1fr}.hero-visual{min-height:430px}.menu-shot img{min-height:260px}.pizza-ring{width:300px;height:300px}.floating-ingredient{width:64px;height:64px;font-size:1.4rem}.brand-ribbon{padding:12px 14px}.brand-ribbon strong{font-size:1.55rem}.brand-chip{position:static;margin-top:14px}.floating-cta{right:12px;left:12px;bottom:12px;justify-content:center}.intro-chef{width:min(60vw,190px)}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <div class="intro" id="intro" aria-label="Intro Super Pizza">
   <div class="intro-scene">
     <div class="intro-glow" aria-hidden="true"></div>
-    <img class="intro-chef" src="chef-intro.jpg" alt="Chef de Super Pizza" width="240" height="420">
-    <div class="intro-copy"><div class="intro-kicker">Sabor que provoca</div><div class="intro-title">Super <span>Pizza</span></div><div class="intro-loading">Preparando algo delicioso...</div><div class="loading-bar" aria-hidden="true"><span></span></div></div>
+    <img class="intro-chef" src="icons/chef-intro.webp" alt="Chef de Super Pizza" width="220" height="390" style="object-fit:contain;background:transparent;">
+    <div class="intro-copy">
+      <div class="intro-kicker">Sabor que provoca</div>
+      <div class="intro-title">Super <span>Pizza</span></div>
+      <div class="intro-loading">Preparando algo delicioso...</div>
+      <div class="loading-bar" aria-hidden="true"><span></span></div>
+    </div>
     <button class="skip-intro" type="button" id="skipIntro">Saltar intro</button>
   </div>
 </div>
+
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="nav-brand" href="#inicio" aria-label="Inicio"><img src="super-pizza-logo.jpg" alt="Super Pizza" width="84" height="54"><span>Super Pizza</span></a>
-    <div class="nav-links" aria-label="Navegación principal"><a href="#menu">Menú visual</a><a href="#sedes">Sedes</a><a href="#nosotros">Nosotros</a><a href="#pedir">Pedir</a></div>
+    <a class="nav-brand" href="#inicio" aria-label="Inicio">
+      <img src="icons/super-pizza-logo.webp" alt="Super Pizza" width="72" height="48" style="object-fit:contain">
+      <span>Super Pizza</span>
+    </a>
+    <div class="nav-links" aria-label="Navegación principal">
+      <a href="#menu">Menú visual</a>
+      <a href="#sedes">Sedes</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#pedir">Pedir</a>
+    </div>
     <a class="btn btn-gold" href="#pedir">Pedir ahora</a>
   </div>
 </nav>
+
 <main id="contenido">
   <header class="hero" id="inicio">
     <div class="container hero-grid">
@@ -66,42 +82,164 @@ body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{
         <div class="badge">Sabor italiano para compartir</div>
         <h1>Más <span class="gold">antojable</span>, más creativo y más <span class="red">memorable</span>.</h1>
         <p>Llevamos la presentación de Super Pizza a un nivel más pro: entrada rápida con el chef, hero más cinematográfico, menú visual protagonista y sedes con personalidad propia para que cada tarjeta se sienta especial y más viva.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#menu">Ver menú</a><a class="btn btn-gold" href="#pedir">Pedir por WhatsApp</a><a class="btn btn-ghost" href="#sedes">Ver sedes</a></div>
-        <div class="hero-proof" aria-label="Datos destacados"><div class="proof-card"><strong>6</strong><span>Sedes con identidad propia.</span></div><div class="proof-card"><strong>Visual</strong><span>Más emoción desde el primer scroll.</span></div><div class="proof-card"><strong>Directo</strong><span>Pedido por WhatsApp sin enredos.</span></div></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Ver menú</a>
+          <a class="btn btn-gold" href="#pedir">Pedir por WhatsApp</a>
+          <a class="btn btn-ghost" href="#sedes">Ver sedes</a>
+        </div>
+        <div class="hero-proof" aria-label="Datos destacados">
+          <div class="proof-card"><strong>6</strong><span>Sedes con identidad propia.</span></div>
+          <div class="proof-card"><strong>Visual</strong><span>Más emoción desde el primer scroll.</span></div>
+          <div class="proof-card"><strong>Directo</strong><span>Pedido por WhatsApp sin enredos.</span></div>
+        </div>
       </div>
+
       <div class="hero-visual reveal" aria-hidden="true">
-        <div class="visual-wrap"><div class="pizza-halo"></div><div class="pizza-ring"></div><div class="floating-ingredient one">🍕</div><div class="floating-ingredient two">🧀</div><div class="floating-ingredient three">🍅</div><div class="floating-ingredient four">✨</div><div class="brand-ribbon top"><strong>Super Pizza</strong><span>Sabor con presencia</span></div><div class="brand-ribbon bottom"><strong>Pide fácil</strong><span>WhatsApp por sede</span></div><img class="hero-chef" src="chef-intro.jpg" alt="Chef de Super Pizza sosteniendo una pizza" width="430" height="620"><div class="brand-chip"><img src="super-pizza-logo.jpg" alt="Logo completo de Super Pizza" width="190" height="92"></div></div>
+        <div class="visual-wrap">
+          <div class="pizza-halo"></div>
+          <div class="pizza-ring"></div>
+          <div class="floating-ingredient one">🍕</div>
+          <div class="floating-ingredient two">🧀</div>
+          <div class="floating-ingredient three">🍅</div>
+          <div class="floating-ingredient four">✨</div>
+          <div class="brand-ribbon top"><strong>Super Pizza</strong><span>Sabor con presencia</span></div>
+          <div class="brand-ribbon bottom"><strong>Pide fácil</strong><span>WhatsApp por sede</span></div>
+          <img class="hero-chef" src="icons/chef-intro.webp" alt="Chef de Super Pizza sosteniendo una pizza" width="410" height="600" style="object-fit:contain;background:transparent;">
+          <div class="brand-chip"><img src="icons/super-pizza-logo.webp" alt="Logo completo de Super Pizza" width="170" height="82" style="object-fit:contain;"></div>
+        </div>
       </div>
     </div>
     <div class="scroll-cue"><span></span>Desliza</div>
   </header>
-  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Funza · Chía</span><span>Pedido directo por WhatsApp</span><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Funza · Chía</span><span>Pedido directo por WhatsApp</span></div></div>
-  <section class="section" id="menu"><div class="container"><div class="section-head reveal"><span class="badge">Menú visual</span><h2>Producto primero, impacto después.</h2><p>El sitio sigue una lógica comercial clara, pero ahora se siente mucho más creativo y teatral. La idea es que todo entre por los ojos antes de que el usuario llegue a pedir.</p></div><div class="menu-grid reveal"><button class="menu-shot" type="button" data-lightbox="menu1.jpg" aria-label="Abrir primera imagen del menú"><img src="menu1.jpg" alt="Primera imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Imagen 01</small><h3>Sabores que enamoran</h3><p>Un menú pensado para antojar desde el primer vistazo.</p></div></button><button class="menu-shot" type="button" data-lightbox="menu2.jpg" aria-label="Abrir segunda imagen del menú"><img src="menu2.jpg" alt="Segunda imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Imagen 02</small><h3>Más opciones para compartir</h3><p>Toca la imagen para verla mejor y elegir más rápido.</p></div></button></div></div></section>
-  <section class="section" id="sedes"><div class="container"><div class="section-head reveal"><span class="badge">Sedes y pedidos</span><h2>Cada sede con su propio carisma.</h2><p>Dejamos los emojis porque se ven bien, pero ahora cada sede tiene además una identidad visual más marcada, con acentos, icono propio y una presentación más llamativa para que no se sientan tarjetas genéricas. [file:18]</p></div><div class="sedes-wrap"><div class="sedes-grid" id="sedesGrid"></div></div></div></section>
-  <section class="section" id="nosotros"><div class="container story-grid"><article class="story-card card reveal"><span class="badge">La experiencia</span><h3>Más pro, más creativo y más antojable.</h3><p>La mejora no fue solo estética. La página ahora tiene una narrativa visual más fuerte, una mejor puesta en escena y detalles más memorables en secciones clave como hero, menú y sedes. [file:3][cite:5]</p><div class="story-pills"><span>Intro corta</span><span>Chef protagonista</span><span>Emoji con intención</span><span>Sedes con personalidad</span></div></article><aside class="focus-card card reveal"><span class="badge">Lo que cambia</span><h3>Presentación con mucho más nivel.</h3><p>Subimos la sensación de marca usando ritmo visual, sombras más ricas, composiciones con más energía y tarjetas de sedes tratadas casi como piezas publicitarias. [file:18][cite:5]</p><div class="focus-stats"><div class="stat"><strong>Branding</strong><span>Más memorable y expresivo.</span></div><div class="stat"><strong>Sedes</strong><span>Ahora sí se sienten distintas.</span></div><div class="stat"><strong>Hero</strong><span>Más teatral y antojable.</span></div><div class="stat"><strong>Pedido</strong><span>Se mantiene claro y rápido.</span></div></div></aside></div></section>
-  <section class="section" id="pedir"><div class="container"><div class="order-band card reveal"><div class="order-copy"><span class="badge">Pedido rápido</span><h2>Tu próxima pizza está a un clic de distancia.</h2><p>Selecciona una sede activa y entra directo a WhatsApp con el mensaje preparado. Toda la experiencia está pensada para cerrar con una acción clara y rápida.</p></div><div class="order-links" id="orderLinks"></div></div></div></section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Super Pizza</span>
+      <span>Exquisito sabor italiano</span>
+      <span>Mosquera · Funza · Chía</span>
+      <span>Pedido directo por WhatsApp</span>
+      <span>Super Pizza</span>
+      <span>Exquisito sabor italiano</span>
+      <span>Mosquera · Funza · Chía</span>
+      <span>Pedido directo por WhatsApp</span>
+    </div>
+  </div>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Menú visual</span>
+        <h2>Producto primero, impacto después.</h2>
+        <p>El sitio sigue una lógica comercial clara, pero ahora se siente mucho más creativo y teatral. La idea es que todo entre por los ojos antes de que el usuario llegue a pedir.</p>
+      </div>
+      <div class="menu-grid reveal">
+        <button class="menu-shot" type="button" data-lightbox="menu1.jpg" aria-label="Abrir primera imagen del menú">
+          <img src="menu1.jpg" alt="Primera imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200">
+          <div class="menu-caption">
+            <small>Imagen 01</small>
+            <h3>Sabores que enamoran</h3>
+            <p>Un menú pensado para antojar desde el primer vistazo.</p>
+          </div>
+        </button>
+        <button class="menu-shot" type="button" data-lightbox="menu2.jpg" aria-label="Abrir segunda imagen del menú">
+          <img src="menu2.jpg" alt="Segunda imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200">
+          <div class="menu-caption">
+            <small>Imagen 02</small>
+            <h3>Más opciones para compartir</h3>
+            <p>Toca la imagen para verla mejor y elegir más rápido.</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sedes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Sedes y pedidos</span>
+        <h2>Cada sede con su propio carisma.</h2>
+        <p>Dejamos los emojis porque se ven bien, pero ahora cada sede tiene además una identidad visual más marcada, con acentos, icono propio y una presentación más llamativa para que no se sientan tarjetas genéricas.</p>
+      </div>
+      <div class="sedes-wrap"><div class="sedes-grid" id="sedesGrid"></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="container story-grid">
+      <article class="story-card card reveal">
+        <span class="badge">La experiencia</span>
+        <h3>Más pro, más creativo y más antojable.</h3>
+        <p>La mejora no fue solo estética. La página ahora tiene una narrativa visual más fuerte, una mejor puesta en escena y detalles más memorables en secciones clave como hero, menú y sedes.</p>
+        <div class="story-pills">
+          <span>Intro corta</span><span>Chef protagonista</span><span>Emoji con intención</span><span>Sedes con personalidad</span>
+        </div>
+      </article>
+      <aside class="focus-card card reveal">
+        <span class="badge">Lo que cambia</span>
+        <h3>Presentación con mucho más nivel.</h3>
+        <p>Subimos la sensación de marca usando ritmo visual, sombras más ricas, composiciones con más energía y tarjetas de sedes tratadas casi como piezas publicitarias.</p>
+        <div class="focus-stats">
+          <div class="stat"><strong>Branding</strong><span>Más memorable y expresivo.</span></div>
+          <div class="stat"><strong>Sedes</strong><span>Ahora sí se sienten distintas.</span></div>
+          <div class="stat"><strong>Hero</strong><span>Más teatral y antojable.</span></div>
+          <div class="stat"><strong>Pedido</strong><span>Se mantiene claro y rápido.</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="pedir">
+    <div class="container">
+      <div class="order-band card reveal">
+        <div class="order-copy">
+          <span class="badge">Pedido rápido</span>
+          <h2>Tu próxima pizza está a un clic de distancia.</h2>
+          <p>Selecciona una sede activa y entra directo a WhatsApp con el mensaje preparado. Toda la experiencia está pensada para cerrar con una acción clara y rápida.</p>
+        </div>
+        <div class="order-links" id="orderLinks"></div>
+      </div>
+    </div>
+  </section>
 </main>
+
 <a class="floating-cta" href="#pedir" aria-label="Ir a pedir por WhatsApp">Pide aquí</a>
-<footer class="footer"><div class="container"><img class="footer-logo" src="super-pizza-logo.jpg" alt="Super Pizza" width="360" height="180"><p>Super Pizza · Menú visual, sedes con personalidad y pedido directo por WhatsApp en una experiencia más pro y más creativa. [file:13][file:14]</p></div></footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada del menú"><button class="lightbox-close" type="button" id="closeLightbox" aria-label="Cerrar">✕</button><img id="lightboxImg" src="" alt="Imagen ampliada del menú"></div>
+
+<footer class="footer">
+  <div class="container">
+    <img class="footer-logo" src="icons/super-pizza-logo.webp" alt="Super Pizza" width="320" height="160" style="object-fit:contain;">
+    <p>Super Pizza · Menú visual, sedes con personalidad y pedido directo por WhatsApp en una experiencia más pro y más creativa.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada del menú">
+  <button class="lightbox-close" type="button" id="closeLightbox" aria-label="Cerrar">✕</button>
+  <img id="lightboxImg" src="" alt="Imagen ampliada del menú">
+</div>
+
 <script>
 const sedes = [
-  { nombre: "Santa Ana", icono: "🍕", subicono: "📍", ciudad: "Mosquera", telefono: "3123642016", direccion: "Cl. 10 #21-10B, Mosquera, Cundinamarca", mapa: "Cl. 10 #21-10B, Mosquera, Cundinamarca", accent: 'linear-gradient(90deg,#ff6a3d,#ffb347)', glow: 'rgba(255,122,69,.18)' },
-  { nombre: "Mosquera Centro", icono: "🏛️", subicono: "📍", ciudad: "Mosquera", telefono: "3133597806", direccion: "Ubicación próximamente", mapa: "", accent: 'linear-gradient(90deg,#6d5dfc,#8b7dff)', glow: 'rgba(109,93,252,.16)' },
-  { nombre: "Villa Nueva", icono: "🌆", subicono: "📍", ciudad: "Mosquera", telefono: "3133933590", direccion: "Cra. 3 #18-20, Mosquera, Cundinamarca", mapa: "Cra. 3 #18-20, Mosquera, Cundinamarca", accent: 'linear-gradient(90deg,#ff5a7a,#ff9f7a)', glow: 'rgba(255,90,122,.16)' },
-  { nombre: "La Prosperidad", icono: "🌟", subicono: "📍", ciudad: "Mosquera", telefono: "3202569597", direccion: "Ubicación próximamente", mapa: "", accent: 'linear-gradient(90deg,#f0b429,#ffd86e)', glow: 'rgba(240,180,41,.18)' },
-  { nombre: "Funza", icono: "🎈", subicono: "📍", ciudad: "Funza", telefono: "3209355962", direccion: "Ubicación próximamente", mapa: "", accent: 'linear-gradient(90deg,#ff4f81,#ff7aa2)', glow: 'rgba(255,79,129,.16)' },
-  { nombre: "Chía", icono: "🌙", subicono: "📍", ciudad: "Chía", telefono: "", direccion: "Próximamente", mapa: "", accent: 'linear-gradient(90deg,#6f63ff,#8d86ff)', glow: 'rgba(111,99,255,.16)' }
+  { nombre: "Santa Ana", icono: "🍕", subicono: "📍", ciudad: "Mosquera", telefono: "3123642016", direccion: "Cl. 10 #21-10B, Mosquera, Cundinamarca", mapa: "Cl. 10 #21-10B, Mosquera, Cundinamarca", accent: "linear-gradient(90deg,#ff6a3d,#ffb347)", glow: "rgba(255,122,69,.18)" },
+  { nombre: "Mosquera Centro", icono: "🏛️", subicono: "📍", ciudad: "Mosquera", telefono: "3133597806", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#6d5dfc,#8b7dff)", glow: "rgba(109,93,252,.16)" },
+  { nombre: "Villa Nueva", icono: "🌆", subicono: "📍", ciudad: "Mosquera", telefono: "3133933590", direccion: "Cra. 3 #18-20, Mosquera, Cundinamarca", mapa: "Cra. 3 #18-20, Mosquera, Cundinamarca", accent: "linear-gradient(90deg,#ff5a7a,#ff9f7a)", glow: "rgba(255,90,122,.16)" },
+  { nombre: "La Prosperidad", icono: "🌟", subicono: "📍", ciudad: "Mosquera", telefono: "3202569597", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#f0b429,#ffd86e)", glow: "rgba(240,180,41,.18)" },
+  { nombre: "Funza", icono: "🎈", subicono: "📍", ciudad: "Funza", telefono: "3209355962", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#ff4f81,#ff7aa2)", glow: "rgba(255,79,129,.16)" },
+  { nombre: "Chía", icono: "🌙", subicono: "📍", ciudad: "Chía", telefono: "", direccion: "Próximamente", mapa: "", accent: "linear-gradient(90deg,#6f63ff,#8d86ff)", glow: "rgba(111,99,255,.16)" }
 ];
-function waLink(sede){ const mensaje = `Hola, quiero hacer un pedido en la sede ${sede.nombre} de Super Pizza.`; return `https://wa.me/57${sede.telefono}?text=${encodeURIComponent(mensaje)}`; }
-function mapLink(query){ return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`; }
+
+function waLink(sede){
+  const mensaje = `Hola, quiero hacer un pedido en la sede ${sede.nombre} de Super Pizza.`;
+  return `https://wa.me/57${sede.telefono}?text=${encodeURIComponent(mensaje)}`;
+}
+function mapLink(query){
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
 function renderSedes(){
   const sedesGrid = document.getElementById('sedesGrid');
   const orderLinks = document.getElementById('orderLinks');
   sedesGrid.innerHTML = sedes.map((sede, index) => `
     <article class="sede card reveal" style="transition-delay:${index * 55}ms;--accent:${sede.accent};--glow:${sede.glow};">
       <div class="sede-top">
-        <div class="sede-icon">${sede.icono}</div>
+        <div class="sede-icon" aria-hidden="true">${sede.icono}</div>
         <span class="sede-status">${sede.telefono ? 'Pedido activo' : 'Próximamente'}</span>
       </div>
       <h3>SEDE ${sede.nombre.toUpperCase()}</h3>
@@ -120,10 +258,42 @@ function renderSedes(){
   orderLinks.innerHTML = sedes.map(sede => sede.telefono ? `<a class="order-link" href="${waLink(sede)}" target="_blank" rel="noopener noreferrer"><span><strong>${sede.icono} ${sede.nombre}</strong><small>${sede.ciudad}</small></span><span>↗</span></a>` : `<div class="order-link" aria-disabled="true"><span><strong>${sede.icono} ${sede.nombre}</strong><small>Próximamente</small></span><span>—</span></div>`).join('');
   setupReveal();
 }
-function startIntro(){ const finish = () => document.body.classList.add('loaded'); const skip = document.getElementById('skipIntro'); window.setTimeout(finish, 1450); skip.addEventListener('click', finish); window.addEventListener('load', () => window.setTimeout(finish, 950)); }
-function setupReveal(){ const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: .12 }); document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el)); }
-function setupLightbox(){ const lightbox = document.getElementById('lightbox'); const img = document.getElementById('lightboxImg'); const close = () => { lightbox.classList.remove('open'); img.src = ''; }; document.querySelectorAll('[data-lightbox]').forEach(button => { button.addEventListener('click', () => { img.src = button.dataset.lightbox; lightbox.classList.add('open'); }); }); document.getElementById('closeLightbox').addEventListener('click', close); lightbox.addEventListener('click', e => { if(e.target === lightbox) close(); }); document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); }); }
-renderSedes(); startIntro(); setupReveal(); setupLightbox();
+function startIntro(){
+  const finish = () => document.body.classList.add('loaded');
+  const skip = document.getElementById('skipIntro');
+  window.setTimeout(finish, 1450);
+  skip.addEventListener('click', finish);
+  window.addEventListener('load', () => window.setTimeout(finish, 950));
+}
+function setupReveal(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+function setupLightbox(){
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const close = () => { lightbox.classList.remove('open'); img.src = ''; };
+  document.querySelectorAll('[data-lightbox]').forEach(button => {
+    button.addEventListener('click', () => {
+      img.src = button.dataset.lightbox;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('closeLightbox').addEventListener('click', close);
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+}
+renderSedes();
+startIntro();
+setupReveal();
+setupLightbox();
 </script>
 </body>
 </html>
