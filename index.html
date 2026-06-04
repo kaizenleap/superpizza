@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Super Pizza | El antojo empieza aquí</title>
+<meta name="description" content="Super Pizza: sabor italiano, menú visual, sedes y pedidos directos por WhatsApp en Mosquera, Funza y Chía." />
+<meta name="theme-color" content="#f59c00" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#d91f27;
+  --rojo-vivo:#ff4a39;
+  --naranja:#ff8f1f;
+  --dorado:#f5b11f;
+  --amarillo:#ffd75a;
+  --amarillo-suave:#fff0b6;
+  --crema:#fff9ef;
+  --crema-2:#fff3d8;
+  --verde:#5ea84f;
+  --cafe:#7b3110;
+  --fondo:#fff8ea;
+  --sombra:0 24px 60px rgba(115, 45, 10, .18);
+  --borde:rgba(217,31,39,.12);
+  --glass:rgba(255,255,255,.56);
+  --radius:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  color:#4d1d0f;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(255,215,90,.55), transparent 22rem),
+    radial-gradient(circle at 82% 14%, rgba(255,143,31,.28), transparent 20rem),
+    radial-gradient(circle at 50% 110%, rgba(255,74,57,.18), transparent 22rem),
+    linear-gradient(180deg, #fff8eb 0%, #fff6df 48%, #fff9ef 100%);
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(245,177,31,.11) 2px, transparent 2px),
+    radial-gradient(circle at 32px 32px, rgba(217,31,39,.07) 1.6px, transparent 1.6px);
+  background-size:54px 54px;
+  opacity:.55;
+  pointer-events:none;
+  z-index:-2;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit}
+::selection{background:var(--dorado);color:#4b1600}
+
+.intro{
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,215,90,.55), transparent 20rem),
+    radial-gradient(circle at 50% 50%, rgba(255,143,31,.18), transparent 26rem),
+    linear-gradient(180deg, #fff7df 0%, #ffe9bc 100%);
+  transition:opacity .8s ease, visibility .8s ease;
+}
+body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}
+.intro-scene{position:relative;width:min(92vw,780px);min-height:470px;display:grid;place-items:center;text-align:center}
+.intro-glow{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle, rgba(255,215,90,.6), rgba(255,74,57,.16) 58%, transparent 72%);filter:blur(10px);animation:pulse 2.2s ease-in-out infinite}
+.intro-brand{position:relative;z-index:2;display:grid;justify-items:center;gap:12px}
+.intro-chef{width:min(54vw,260px);filter:drop-shadow(0 18px 36px rgba(132,72,16,.22));animation:bob 2.8s ease-in-out infinite}
+.intro-copy{display:grid;gap:8px}
+.intro-kicker{color:#a54b00;letter-spacing:.28em;font-size:.76rem;text-transform:uppercase;font-weight:900}
+.intro-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(3.3rem,11vw,6.6rem);line-height:.86;color:var(--rojo);text-shadow:0 10px 26px rgba(255,255,255,.35)}
+.intro-title span{color:var(--naranja)}
+.intro-loading{color:#7f3b10;font-weight:800}
+.loading-bar{width:min(78vw,330px);height:12px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.58);box-shadow:inset 0 0 0 1px rgba(217,31,39,.08)}
+.loading-bar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--amarillo),var(--naranja),var(--rojo-vivo));box-shadow:0 0 24px rgba(255,143,31,.35);animation:loading 2.2s ease forwards}
+.skip-intro{position:absolute;right:18px;bottom:18px;border:1px solid rgba(217,31,39,.14);color:#8d3c12;background:rgba(255,255,255,.62);border-radius:999px;padding:10px 16px;cursor:pointer;backdrop-filter:blur(10px)}
+.skip-intro:hover{border-color:var(--naranja);color:#5b1d00}
+.intro-sticker{position:absolute;display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#fff7dd,#ffd978);box-shadow:var(--sombra);font-size:2rem;color:#7b3110;animation:floaty 4s ease-in-out infinite}
+.intro-sticker.one{left:7%;top:16%}
+.intro-sticker.two{right:8%;top:24%;animation-delay:1.2s}
+.intro-sticker.three{left:15%;bottom:18%;animation-delay:2s}
+@keyframes loading{from{width:0}to{width:100%}}
+@keyframes pulse{0%,100%{transform:scale(.97)}50%{transform:scale(1.04)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-10px) rotate(8deg)}}
+
+.container{width:min(1180px,calc(100% - 36px));margin-inline:auto}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:10px 16px;border-radius:999px;background:linear-gradient(135deg,#fff7d8,#ffe7a7);border:1px solid rgba(245,177,31,.22);color:#a24e00;font-weight:900;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;box-shadow:0 8px 22px rgba(245,177,31,.14)}
+.section-head{text-align:center;display:grid;justify-items:center;gap:14px;margin-bottom:44px}
+.section-head h2{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(2.3rem,6vw,4.7rem);line-height:.97;max-width:850px;color:#62210c}
+.section-head h2 span{color:var(--rojo)}
+.section-head p{max-width:730px;color:#7d4a26;font-size:1.04rem;line-height:1.75}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 22px;border-radius:999px;border:1px solid transparent;font-weight:900;letter-spacing:.02em;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, transparent 22%, rgba(255,255,255,.5), transparent 80%);transform:translateX(-120%);transition:transform .65s ease}
+.btn:hover::after{transform:translateX(120%)}
+.btn:hover{transform:translateY(-4px) scale(1.01)}
+.btn-primary{color:white;background:linear-gradient(135deg,var(--rojo-vivo),var(--rojo),#aa180d);box-shadow:0 16px 34px rgba(217,31,39,.28)}
+.btn-gold{color:#5b2400;background:linear-gradient(135deg,#fff2ad,var(--dorado),#ffb93f);box-shadow:0 16px 34px rgba(245,177,31,.24)}
+.btn-ghost{color:#7b3110;border-color:rgba(245,177,31,.4);background:rgba(255,255,255,.72);backdrop-filter:blur(8px)}
+
+.nav{position:sticky;top:0;z-index:900;backdrop-filter:blur(16px);background:rgba(255,249,239,.82);border-bottom:1px solid rgba(217,31,39,.08)}
+.nav-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-family:"Bebas Neue",sans-serif;font-size:1.7rem;letter-spacing:.04em;color:var(--rojo)}
+.nav-brand img{width:62px;height:42px;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(245,177,31,.28))}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+.nav-links a{padding:10px 14px;border-radius:999px;color:#8c4618;font-weight:900;font-size:.86rem}
+.nav-links a:hover{color:#621a00;background:rgba(255,215,90,.26)}
+.nav .btn{min-height:42px;padding:10px 16px}
+
+.hero{min-height:calc(100vh - 74px);position:relative;display:grid;align-items:center;padding:78px 0 64px;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-200px;top:-160px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle, rgba(255,215,90,.65) 0, rgba(255,215,90,.2) 45%, transparent 70%)}
+.hero::after{content:"";position:absolute;left:-120px;bottom:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(255,74,57,.14), transparent 70%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.82fr);gap:46px;align-items:center}
+.hero-copy{display:grid;gap:24px}
+.eyebrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(3.1rem,8vw,7rem);line-height:.92;letter-spacing:-.05em;max-width:760px;color:#6b230c}
+.hero h1 .gold{color:var(--naranja)}
+.hero h1 .red{color:var(--rojo)}
+.hero-copy > p{max-width:670px;color:#7b4a26;font-size:clamp(1rem,2.2vw,1.18rem);line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:10px}
+.proof-card{border:1px solid rgba(245,177,31,.18);border-radius:22px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,248,235,.85));box-shadow:var(--sombra)}
+.proof-card strong{display:block;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.04em}
+.proof-card span{color:#8b542c;font-size:.86rem}
+.hero-visual{position:relative;min-height:580px;display:grid;place-items:center}
+.visual-wrap{position:relative;width:min(100%,480px);height:100%;display:grid;place-items:center}
+.pizza-halo{position:absolute;inset:8% 4%;border-radius:36px;background:linear-gradient(135deg,#fff0b8,#ffd76d 55%, #ffbe69 100%);opacity:.45;filter:blur(.3px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4), 0 20px 60px rgba(245,177,31,.24)}
+.pizza-ring{position:absolute;width:420px;height:420px;border-radius:50%;border:18px solid rgba(255,183,0,.16);border-top-color:rgba(217,31,39,.18);border-bottom-color:rgba(94,168,79,.2);animation:spinSlow 18s linear infinite}
+.pizza-ring::before{content:"";position:absolute;inset:28px;border-radius:50%;border:10px dashed rgba(217,31,39,.12)}
+.hero-chef{position:relative;z-index:2;width:min(100%,430px);filter:drop-shadow(0 18px 34px rgba(115,45,10,.18));animation:chefJump 5s ease-in-out infinite}
+@keyframes chefJump{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+.floating-ingredient{position:absolute;z-index:3;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#fff8dc,#ffd66f);box-shadow:var(--sombra);font-size:1.85rem;color:#6b2506;animation:floaty 4.5s ease-in-out infinite}
+.floating-ingredient.one{left:-8px;top:16%}
+.floating-ingredient.two{right:4%;top:12%;animation-delay:1s}
+.floating-ingredient.three{left:8%;bottom:14%;animation-delay:2s}
+.floating-ingredient.four{right:-10px;bottom:20%;animation-delay:1.4s}
+.brand-ribbon{position:absolute;z-index:3;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.8);border:1px solid rgba(245,177,31,.2);backdrop-filter:blur(8px);box-shadow:var(--sombra)}
+.brand-ribbon strong{display:block;font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--rojo);line-height:.95}
+.brand-ribbon span{display:block;color:#9d4c16;font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.brand-ribbon.top{right:0;top:18%}
+.brand-ribbon.bottom{left:0;bottom:16%}
+.scroll-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);color:#9b5d2c;display:grid;justify-items:center;gap:8px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.scroll-cue span{width:2px;height:30px;border-radius:99px;background:linear-gradient(var(--naranja),transparent);animation:down 1.5s ease-in-out infinite}
+@keyframes down{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+
+.marquee{overflow:hidden;border-block:1px solid rgba(245,177,31,.22);background:linear-gradient(90deg,#fff0c5,#ffd86f,#ffe3a9)}
+.marquee-track{display:flex;width:max-content;animation:marquee 24s linear infinite}
+.marquee span{padding:18px 26px;color:#8a3812;font-weight:900;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+section{position:relative;padding:92px 0}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,251,241,.93));border:1px solid var(--borde);border-radius:var(--radius);box-shadow:var(--sombra)}
+#nosotros::before,#menu::before,#sedes::before,#pedir::before{content:"";position:absolute;left:0;right:0;top:-1px;height:20px;background:radial-gradient(circle at 10px -2px, transparent 12px, rgba(255,255,255,.55) 13px) repeat-x;background-size:40px 20px;opacity:.5;pointer-events:none}
+
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch}
+.about-story{padding:34px;display:grid;gap:18px;overflow:hidden;position:relative}
+.about-story::after{content:"🍕";position:absolute;right:24px;bottom:20px;font-size:4rem;opacity:.09;transform:rotate(-12deg)}
+.about-story h3{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,3.15rem);line-height:1;color:#67220c}
+.about-story p{color:#7a4826;line-height:1.82;font-size:1.02rem}
+.about-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.about-pills span{padding:10px 14px;border-radius:999px;color:#98420d;background:#fff6da;border:1px solid rgba(245,177,31,.18);font-weight:900;font-size:.86rem}
+.about-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stat{padding:26px 20px;display:grid;align-content:center;gap:8px;min-height:160px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fffef7,#fff4d6)}
+.stat::after{content:"";position:absolute;inset:auto -30px -60px auto;width:130px;height:130px;border-radius:50%;background:rgba(255,215,90,.24)}
+.stat strong{position:relative;z-index:1;font-family:"Bebas Neue",sans-serif;font-size:clamp(2.3rem,6vw,4rem);color:var(--rojo)}
+.stat span{position:relative;z-index:1;color:#85512a;font-weight:800}
+
+.why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.why-card{padding:24px 20px;text-align:center;display:grid;justify-items:center;gap:10px;position:relative;overflow:hidden;background:linear-gradient(180deg,#fffdf6,#fff4d6)}
+.why-card::after{content:"";position:absolute;right:-18px;top:-18px;width:86px;height:86px;border-radius:50%;background:rgba(255,215,90,.25)}
+.why-icon{position:relative;z-index:1;width:66px;height:66px;border-radius:20px;display:grid;place-items:center;font-size:1.9rem;background:linear-gradient(135deg,#fff4bf,#ffd46f);box-shadow:0 10px 22px rgba(245,177,31,.18)}
+.why-card h3{position:relative;z-index:1;font-family:"Bebas Neue",sans-serif;font-size:1.55rem;letter-spacing:.04em;color:#6a240b}
+.why-card p{position:relative;z-index:1;color:#86522b;line-height:1.65;font-size:.94rem}
+.floating-cta{position:fixed;right:18px;bottom:18px;z-index:950;display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(135deg,#25d366,#1bb85b);color:white;font-weight:900;box-shadow:0 18px 34px rgba(37,211,102,.28);border:2px solid rgba(255,255,255,.55)}
+.floating-cta:hover{transform:translateY(-4px)}
+#menu{background:linear-gradient(180deg, rgba(255,215,90,.16), transparent 38%), linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,250,240,.9))}
+.menu-teaser{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.menu-shot{position:relative;overflow:hidden;border-radius:30px;min-height:300px;background:#fff2d6;border:1px solid rgba(245,177,31,.18);box-shadow:0 28px 60px rgba(145,66,18,.18);cursor:pointer;isolation:isolate}
+.menu-shot img{width:100%;height:100%;min-height:360px;object-fit:cover;transition:transform .6s ease, filter .6s ease}
+.menu-shot::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(103,35,12,.72));z-index:1;pointer-events:none}
+.menu-shot::after{content:"Toca para ampliar";position:absolute;right:18px;top:18px;z-index:2;padding:10px 14px;border-radius:999px;color:#5c2200;background:linear-gradient(135deg,#fff3b5,var(--dorado));font-weight:900;box-shadow:0 10px 24px rgba(245,177,31,.28)}
+.menu-shot:hover img{transform:scale(1.055);filter:saturate(1.1) contrast(1.02)}
+.menu-caption{position:absolute;left:22px;right:22px;bottom:22px;z-index:2}
+.menu-caption small{display:inline-flex;color:#ffe7a8;text-transform:uppercase;letter-spacing:.16em;font-weight:900;font-size:.72rem}
+.menu-caption h3{font-family:"Playfair Display",serif;font-size:2rem;margin-top:4px;color:white}
+.menu-note{margin:28px auto 0;max-width:760px;text-align:center;color:#8f5a32;line-height:1.7}
+
+#sedes{background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,245,221,.9))}
+.sedes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.sede{position:relative;padding:24px;display:grid;gap:15px;overflow:hidden;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;background:linear-gradient(180deg,#fffef9,#fff7e7)}
+.sede::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--rojo),var(--naranja),var(--amarillo));transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.sede:hover{transform:translateY(-7px) rotate(-.5deg);border-color:rgba(245,177,31,.28);box-shadow:0 34px 70px rgba(145,66,18,.2)}
+.sede:hover::before{transform:scaleX(1)}
+.sede-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.sede-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:18px;font-size:1.55rem;background:linear-gradient(135deg,#fff5ca,#ffd870);border:1px solid rgba(245,177,31,.18)}
+.sede-status{padding:7px 10px;border-radius:999px;font-size:.72rem;font-weight:900;color:#9d4a14;background:#fff7d8;border:1px solid rgba(245,177,31,.16)}
+.sede h3{font-family:"Bebas Neue",sans-serif;font-size:2.08rem;letter-spacing:.04em;line-height:1;color:#6a240b}
+.sede-info{display:grid;gap:9px;color:#845127;line-height:1.55;font-size:.96rem}
+.sede-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.sede-actions .btn{flex:1 1 130px;min-height:44px;padding:12px 14px;font-size:.9rem}
+.btn-wa{color:white;background:linear-gradient(135deg,#25d366,#1ab657);box-shadow:0 14px 28px rgba(37,211,102,.18)}
+.btn-disabled{pointer-events:none;opacity:.75;background:rgba(255,255,255,.7);border-color:rgba(217,31,39,.08);color:#9d683d}
+
+#pedir{background:linear-gradient(135deg,#ffcc4d 0%, #ffac30 45%, #ff7946 100%);overflow:hidden}
+.order-panel{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center;padding:34px;background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,247,227,.95))}
+.order-panel::before{content:"🍕";position:absolute;right:18px;top:12px;font-size:5rem;opacity:.08;transform:rotate(10deg)}
+.order-copy{position:relative;z-index:1;display:grid;gap:18px}
+.order-copy h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,4.2rem);line-height:.96;color:#65210c}
+.order-copy p{color:#7a4927;line-height:1.75}
+.order-links{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.order-link{padding:18px;border-radius:22px;background:rgba(255,255,255,.82);border:1px solid rgba(245,177,31,.16);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .25s ease, background .25s ease;box-shadow:0 10px 24px rgba(145,66,18,.08)}
+.order-link:hover{transform:translateY(-4px);background:white}
+.order-link strong{display:block;color:#6b240b}
+.order-link small{color:#8f5c33}
+
+footer{padding:46px 0 34px;background:linear-gradient(180deg,#fff4d2,#ffe7b6);text-align:center;border-top:1px solid rgba(245,177,31,.18)}
+.footer-logo{width:min(320px,78vw);margin:0 auto 18px;filter:drop-shadow(0 10px 24px rgba(245,177,31,.25))}
+footer p{color:#8d4b1e;line-height:1.7}
+
+.lightbox{position:fixed;inset:0;z-index:9998;display:none;place-items:center;padding:28px;background:rgba(85,28,10,.78);backdrop-filter:blur(8px)}
+.lightbox.open{display:grid}
+.lightbox img{max-width:min(96vw,1280px);max-height:86vh;object-fit:contain;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.lightbox-close{position:fixed;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);color:white;background:rgba(255,255,255,.16);font-size:1.4rem;cursor:pointer}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .hero-grid,.about-grid,.order-panel{grid-template-columns:1fr}
+  .hero-visual{min-height:430px;order:-1}
+  .hero-copy{text-align:center;justify-items:center}
+  .hero-proof{width:100%}
+  .sedes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand-ribbon.top{right:8%;top:8%}
+  .brand-ribbon.bottom{left:8%;bottom:12%}
+}
+@media (max-width:720px){
+  .nav-inner{justify-content:center;flex-wrap:wrap;padding:12px 0}
+  .nav-links{order:3;width:100%}
+  .nav .btn{display:none}
+  .hero{padding-top:58px}
+  .hero-proof,.about-stats,.menu-teaser,.sedes-grid,.order-links{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .menu-shot img{min-height:260px}
+  section{padding:72px 0}
+  .order-panel{padding:22px}
+  .hero h1{font-size:clamp(3rem,15vw,5rem)}
+  .intro-sticker{width:66px;height:66px;font-size:1.55rem}
+  .intro-sticker.one{left:2%;top:10%}
+  .intro-sticker.two{right:2%;top:18%}
+  .intro-sticker.three{left:8%;bottom:14%}
+  .pizza-ring{width:300px;height:300px}
+  .floating-ingredient{width:64px;height:64px;font-size:1.4rem}
+  .brand-ribbon{padding:12px 14px}
+  .brand-ribbon strong{font-size:1.55rem}
+  .brand-ribbon.top{right:2%;top:8%}
+  .brand-ribbon.bottom{left:2%;bottom:8%}
+}
+</style>
+</head>
+<body>
+<div class="intro" id="intro" aria-label="Intro Super Pizza">
+  <div class="intro-scene">
+    <div class="intro-glow" aria-hidden="true"></div>
+    <div class="intro-sticker one" aria-hidden="true">🍕</div>
+    <div class="intro-sticker two" aria-hidden="true">🧀</div>
+    <div class="intro-sticker three" aria-hidden="true">🔥</div>
+    <div class="intro-brand">
+      <img class="intro-chef" src="chef-intro.webp" alt="Chef de Super Pizza" />
+      <div class="intro-copy">
+        <div class="intro-kicker">Sabor que provoca</div>
+        <div class="intro-title">Super <span>Pizza</span></div>
+        <div class="intro-loading">Preparando algo delicioso…</div>
+      </div>
+      <div class="loading-bar" aria-hidden="true"><span></span></div>
+    </div>
+    <button class="skip-intro" type="button" id="skipIntro">Saltar intro</button>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="#inicio" aria-label="Inicio">
+      <img src="super-pizza-logo.webp" alt="Super Pizza">
+      <span>Super Pizza</span>
+    </a>
+    <div class="nav-links" aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú visual</a>
+      <a href="#sedes">Sedes</a>
+      <a href="#pedir">Pedir</a>
+    </div>
+    <a class="btn btn-gold" href="#pedir">Pedir ahora</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">
+        <span class="badge">🍕 Sabor italiano para compartir</span>
+        <span class="badge">🕛 Desde las 12:00 p.m.</span>
+      </div>
+      <h1>El <span class="gold">antojo</span> empieza aquí y termina en tu próxima <span class="red">rebanada favorita</span></h1>
+      <p>En Super Pizza todo invita a disfrutar: pizzas irresistibles, opciones para compartir, sedes cercanas y pedidos rápidos por WhatsApp para que el sabor llegue fácil a tu mesa.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#menu">Ver menú</a>
+        <a class="btn btn-gold" href="#pedir">Pedir por WhatsApp</a>
+        <a class="btn btn-ghost" href="#sedes">Ver sedes</a>
+      </div>
+      <div class="hero-proof" aria-label="Datos destacados">
+        <div class="proof-card"><strong>6</strong><span>Sedes cerca de ti</span></div>
+        <div class="proof-card"><strong>12PM</strong><span>Atendemos desde las 12:00 p.m.</span></div>
+        <div class="proof-card"><strong>100%</strong><span>Sabor cálido, familiar y provocativo</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="visual-wrap">
+        <div class="pizza-halo"></div>
+        <div class="pizza-ring"></div>
+        <div class="floating-ingredient one">🍕</div>
+        <div class="floating-ingredient two">🍅</div>
+        <div class="floating-ingredient three">🧀</div>
+        <div class="floating-ingredient four">🍔</div>
+        <div class="brand-ribbon top"><strong>Super Pizza</strong><span>Exquisito sabor italiano</span></div>
+        <div class="brand-ribbon bottom"><strong>Pide fácil</strong><span>WhatsApp directo por sede</span></div>
+        <img class="hero-chef" src="chef-intro.webp" alt="Chef de Super Pizza sosteniendo una pizza">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>Desliza</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>🍕 Super Pizza</span><span>🔥 Sabor que provoca volver</span><span>📍 Mosquera · Funza · Chía</span><span>🧀 Más sabor en cada porción</span>
+    <span>🍕 Super Pizza</span><span>🔥 Sabor que provoca volver</span><span>📍 Mosquera · Funza · Chía</span><span>🧀 Más sabor en cada porción</span>
+  </div>
+</div>
+
+<section id="nosotros">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">Sobre nosotros</span>
+      <h2>Una pizzería hecha para compartir, disfrutar y pedir con <span>antojo</span></h2>
+      <p>Super Pizza combina sabor, cercanía y una experiencia pensada para que cada visita o pedido se sienta fácil, cálido y delicioso desde el primer momento.</p>
+    </div>
+
+    <div class="about-grid">
+      <article class="about-story card reveal">
+        <h3>Más que pizza: una experiencia con sabor propio</h3>
+        <p>Nos encanta lo que pasa cuando una buena pizza llega a la mesa: conversación, risas, antojo y ganas de repetir. Por eso cuidamos la forma en que te mostramos la marca, el menú y la manera de pedir.</p>
+        <p>Aquí todo está listo para que encuentres tu sede, descubras opciones del menú y hagas tu pedido por WhatsApp sin enredos, con una imagen más viva, sabrosa y auténticamente Super Pizza.</p>
+        <div class="about-pills">
+          <span>🍕 Sabor auténtico</span>
+          <span>👨‍👩‍👧‍👦 Ambiente familiar</span>
+          <span>📲 Pedido directo</span>
+          <span>🔥 Hecho para antojar</span>
+        </div>
+      </article>
+
+      <div class="about-stats reveal">
+        <div class="stat card"><strong>6</strong><span>Sedes para estar más cerca de ti</span></div>
+        <div class="stat card"><strong>12PM</strong><span>Atendemos desde las 12:00 p.m.</span></div>
+        <div class="stat card"><strong>Menú</strong><span>Variedad de opciones para todos los gustos</span></div>
+        <div class="stat card"><strong>WhatsApp</strong><span>Pide fácil y rápido con mensaje directo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="por-que">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">¿Por qué elegirnos?</span>
+      <h2>Razones para volver por otra <span>porción</span></h2>
+      <p>En Super Pizza nos gusta hacer todo más fácil, más rico y mucho más antojable.</p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card card reveal">
+        <div class="why-icon">🔥</div>
+        <h3>Sabor que provoca</h3>
+        <p>Recetas pensadas para que cada bocado tenga ese toque que dan ganas de repetir.</p>
+      </article>
+      <article class="why-card card reveal">
+        <div class="why-icon">📲</div>
+        <h3>Pide sin vueltas</h3>
+        <p>Escríbenos por WhatsApp y haz tu pedido rápido, directo y sin complicaciones.</p>
+      </article>
+      <article class="why-card card reveal">
+        <div class="why-icon">📍</div>
+        <h3>Sedes cercanas</h3>
+        <p>Encuentra la sede más cómoda para ti y disfruta tu pedido con mayor facilidad.</p>
+      </article>
+      <article class="why-card card reveal">
+        <div class="why-icon">👨‍👩‍👧‍👦</div>
+        <h3>Plan para compartir</h3>
+        <p>Perfecto para el antojo del día, una salida en familia o una reunión entre amigos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">Menú visual</span>
+      <h2>Explora nuestro menú y deja que el antojo haga <span>el resto</span></h2>
+      <p>Descubre algunas imágenes de nuestro menú actual. Toca cualquiera para verla en grande y encontrar tu próximo favorito.</p>
+    </div>
+
+    <div class="menu-teaser reveal">
+      <button class="menu-shot" type="button" data-lightbox="menu1.jpg" aria-label="Abrir primera imagen del menú">
+        <img src="menu1.jpg" alt="Primera imagen del menú actual de Super Pizza" loading="lazy">
+        <div class="menu-caption">
+          <small>Imagen 01</small>
+          <h3>Sabores que enamoran</h3>
+        </div>
+      </button>
+
+      <button class="menu-shot" type="button" data-lightbox="menu2.jpg" aria-label="Abrir segunda imagen del menú">
+        <img src="menu2.jpg" alt="Segunda imagen del menú actual de Super Pizza" loading="lazy">
+        <div class="menu-caption">
+          <small>Imagen 02</small>
+          <h3>Más opciones para antojarse</h3>
+        </div>
+      </button>
+    </div>
+
+    <p class="menu-note reveal">Haz clic en las imágenes para ampliarlas y revisar mejor las opciones del menú actual.</p>
+  </div>
+</section>
+
+<section id="sedes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">Sedes y pedidos</span>
+      <h2>Encuentra tu sede y pide la que se te antoje <span>hoy</span></h2>
+      <p>Elige tu sede favorita y pide fácil por WhatsApp. Donde aún no hay ubicación disponible, se muestra como “próximamente”.</p>
+    </div>
+
+    <div class="sedes-grid" id="sedesGrid"></div>
+  </div>
+</section>
+
+<section id="pedir">
+  <div class="container">
+    <div class="order-panel card reveal">
+      <div class="order-copy">
+        <span class="badge">Pedido rápido</span>
+        <h2>Tu próxima pizza está a un clic de distancia</h2>
+        <p>¿Ya sabes qué pedir? Elige tu sede, escríbenos por WhatsApp y disfruta una experiencia rápida, fácil y deliciosa.</p>
+      </div>
+      <div class="order-links" id="orderLinks"></div>
+    </div>
+  </div>
+</section>
+
+<a class="floating-cta" href="#pedir" aria-label="Ir a pedir por WhatsApp">💬 Pide aquí</a>
+
+<footer>
+  <div class="container">
+    <img class="footer-logo" src="super-pizza-logo.webp" alt="Super Pizza">
+    <p>Super Pizza · Exquisito sabor italiano</p>
+    <p>Atendemos desde las 12:00 p.m. · Pide en tu sede favorita por WhatsApp y disfruta el sabor de Super Pizza.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada del menú">
+  <button class="lightbox-close" type="button" id="closeLightbox" aria-label="Cerrar">×</button>
+  <img id="lightboxImg" src="" alt="Imagen ampliada del menú">
+</div>
+
+<script>
+const sedes = [
+  { nombre: "Santa Ana", icono: "🍕", ciudad: "Mosquera", telefono: "3123642016", direccion: "Cl 10 #21 10B, Mosquera, Cundinamarca", mapa: "Cl 10 #21 10B, Mosquera, Cundinamarca" },
+  { nombre: "Mosquera Centro", icono: "🏛️", ciudad: "Mosquera", telefono: "3133597806", direccion: "Ubicación próximamente", mapa: "" },
+  { nombre: "Villa Nueva", icono: "🌇", ciudad: "Mosquera", telefono: "3133933590", direccion: "Cra. 3 #18-20, Mosquera, Cundinamarca", mapa: "Cra. 3 #18-20, Mosquera, Cundinamarca" },
+  { nombre: "La Prosperidad", icono: "🌟", ciudad: "Mosquera", telefono: "3202569597", direccion: "Ubicación próximamente", mapa: "" },
+  { nombre: "Funza", icono: "📍", ciudad: "Funza", telefono: "3209355962", direccion: "Ubicación próximamente", mapa: "" },
+  { nombre: "Chía", icono: "🌆", ciudad: "Chía", telefono: "", direccion: "Próximamente", mapa: "" }
+];
+
+function waLink(sede){
+  const mensaje = `Hola, quiero hacer un pedido en la sede ${sede.nombre} de Super Pizza.`;
+  return `https://wa.me/57${sede.telefono}?text=${encodeURIComponent(mensaje)}`;
+}
+function mapLink(query){
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+function renderSedes(){
+  const sedesGrid = document.getElementById("sedesGrid");
+  const orderLinks = document.getElementById("orderLinks");
+
+  sedesGrid.innerHTML = sedes.map((sede, index) => `
+    <article class="sede card reveal" style="transition-delay:${index * 55}ms">
+      <div class="sede-top">
+        <div class="sede-icon">${sede.icono}</div>
+        <span class="sede-status">${sede.telefono ? "Pedido activo" : "Próximamente"}</span>
+      </div>
+      <div>
+        <h3>Sede ${sede.nombre}</h3>
+        <div class="sede-info">
+          <div>📍 ${sede.ciudad}</div>
+          <div>🗺️ ${sede.direccion}</div>
+          <div>🕛 Atendemos desde las 12:00 p.m.</div>
+          ${sede.telefono ? `<div>📲 WhatsApp: ${sede.telefono}</div>` : `<div>📲 WhatsApp: próximamente</div>`}
+        </div>
+      </div>
+      <div class="sede-actions">
+        ${sede.telefono ? `<a class="btn btn-wa" href="${waLink(sede)}" target="_blank" rel="noopener">WhatsApp</a>` : `<span class="btn btn-disabled">WhatsApp próximamente</span>`}
+        ${sede.mapa ? `<a class="btn btn-ghost" href="${mapLink(sede.mapa)}" target="_blank" rel="noopener">Mapa</a>` : `<span class="btn btn-disabled">Ubicación próximamente</span>`}
+      </div>
+    </article>
+  `).join("");
+
+  orderLinks.innerHTML = sedes.map((sede) => sede.telefono ? `
+    <a class="order-link" href="${waLink(sede)}" target="_blank" rel="noopener">
+      <span><strong>${sede.nombre}</strong><small>${sede.ciudad}</small></span>
+      <span>💬</span>
+    </a>
+  ` : `
+    <div class="order-link" aria-disabled="true">
+      <span><strong>${sede.nombre}</strong><small>Próximamente</small></span>
+      <span>⏳</span>
+    </div>
+  `).join("");
+}
+
+function startIntro(){
+  const finish = () => document.body.classList.add("loaded");
+  const skip = document.getElementById("skipIntro");
+  window.setTimeout(finish, 2500);
+  skip.addEventListener("click", finish);
+  window.addEventListener("load", () => window.setTimeout(finish, 420));
+}
+
+function setupReveal(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+}
+
+function setupLightbox(){
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  const close = () => {
+    lightbox.classList.remove("open");
+    img.src = "";
+  };
+
+  document.querySelectorAll("[data-lightbox]").forEach((button) => {
+    button.addEventListener("click", () => {
+      img.src = button.dataset.lightbox;
+      lightbox.classList.add("open");
+    });
+  });
+
+  document.getElementById("closeLightbox").addEventListener("click", close);
+  lightbox.addEventListener("click", (event) => {
+    if(event.target === lightbox) close();
+  });
+  document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape") close();
+  });
+}
+
+renderSedes();
+startIntro();
+setupReveal();
+setupLightbox();
+</script>
+</body>
+</html>
