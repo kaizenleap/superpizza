@@ -25,8 +25,20 @@ body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{
 .nav{position:sticky;top:0;z-index:200;backdrop-filter:blur(16px);background:rgba(255,249,239,.82);border-bottom:1px solid rgba(207,47,40,.08)}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav-brand{display:flex;align-items:center;gap:14px;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:.04em}.nav-brand img{width:72px;height:auto;max-height:48px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(242,181,64,.24));background:rgba(255,255,255,.96);padding:4px 6px;border-radius:10px}.nav-links{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}.nav-links a{padding:10px 14px;border-radius:999px;color:#8b4a22;font-size:.87rem;font-weight:900}.nav-links a:hover{background:rgba(255,217,117,.28);color:#601f08}
 .badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:10px 15px;border-radius:999px;background:linear-gradient(135deg,#fff6d9,#ffe5a5);border:1px solid rgba(242,181,64,.24);box-shadow:0 10px 24px rgba(242,181,64,.14);color:#9b4d12;font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 22px;border-radius:999px;font-weight:900;cursor:pointer;transition:transform .24s ease, box-shadow .24s ease, filter .24s ease;position:relative;overflow:hidden}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg, transparent 24%, rgba(255,255,255,.42), transparent 78%);transform:translateX(-130%);transition:transform .7s ease}.btn:hover::after{transform:translateX(130%)}.btn:hover{transform:translateY(-4px)}.btn-primary{background:linear-gradient(135deg,var(--rojo-2),var(--rojo),#8e1717);color:#fff;box-shadow:0 18px 34px rgba(207,47,40,.26)}.btn-gold{background:linear-gradient(135deg,#fff0b1,var(--dorado),#ffbc4b);color:#612500;box-shadow:0 18px 34px rgba(242,181,64,.24)}.btn-ghost{background:rgba(255,255,255,.72);border:1px solid rgba(242,181,64,.28);backdrop-filter:blur(10px);color:#6a2b10}.btn-wa{background:linear-gradient(135deg,#25d366,#1bb85b);color:#fff;box-shadow:0 16px 32px rgba(37,211,102,.26)}
+.btn-call{background:linear-gradient(135deg,#f5f5f5,#e8e8e8);color:#3a3a3a;border:1px solid rgba(0,0,0,.1);box-shadow:0 8px 20px rgba(0,0,0,.09)}
 .hero{position:relative;min-height:calc(100vh - 76px);display:grid;align-items:center;padding:70px 0 56px;overflow:hidden}.hero::before{content:"";position:absolute;right:-160px;top:-160px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle, rgba(255,217,117,.64) 0%, rgba(255,217,117,.22) 42%, transparent 72%)}.hero::after{content:"";position:absolute;left:-120px;bottom:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(255,84,64,.16), transparent 68%)}.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.9fr);gap:42px;align-items:center}.hero-copy{display:grid;gap:24px}.hero-copy h1{font-family:"Playfair Display",serif;font-size:clamp(3.1rem,8vw,6.8rem);line-height:.9;letter-spacing:-.05em;color:#64230e;max-width:11ch}.hero-copy h1 .gold{color:var(--naranja)}.hero-copy h1 .red{color:var(--rojo)}.hero-copy p{max-width:62ch;color:#7b4b28;font-size:1.08rem;line-height:1.8}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.proof-card{padding:18px;border-radius:22px;border:1px solid rgba(242,181,64,.18);background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,248,235,.88));box-shadow:var(--shadow-soft)}.proof-card strong{display:block;color:var(--rojo);font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.04em}.proof-card span{display:block;color:#8a542c;font-size:.86rem}
 .hero-visual{position:relative;min-height:580px;display:grid;place-items:center}.visual-wrap{position:relative;width:min(100%,520px);display:grid;place-items:center;overflow:visible}.pizza-halo{position:absolute;inset:8px 4px;border-radius:36px;background:linear-gradient(135deg,#fff0b8,#ffd76d 55%,#ffbe69 100%);opacity:.45;filter:blur(.3px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4),0 20px 60px rgba(242,181,64,.24);pointer-events:none}.pizza-ring{position:absolute;width:430px;height:430px;border-radius:50%;border:18px solid rgba(255,183,0,.16);border-top-color:rgba(207,47,40,.18);border-bottom-color:rgba(94,168,79,.2);animation:spinSlow 18s linear infinite}.pizza-ring::before{content:"";position:absolute;inset:28px;border-radius:50%;border:10px dashed rgba(207,47,40,.12)}.hero-chef{position:relative;z-index:2;width:min(100%,410px);height:auto;filter:drop-shadow(0 18px 34px rgba(115,45,10,.18));animation:chefJump 5s ease-in-out infinite;background:rgba(255,255,255,.08);border-radius:18px;padding:0}.brand-ribbon{position:absolute;z-index:3;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(242,181,64,.2);backdrop-filter:blur(8px);box-shadow:var(--shadow)}.brand-ribbon strong{display:block;font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.05em;color:var(--rojo);line-height:.95}.brand-ribbon span{display:block;color:#9d4c16;font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.brand-ribbon.top{right:0;top:20px}.brand-ribbon.bottom{left:0;bottom:16px}.brand-chip{position:absolute;left:18px;bottom:22px;z-index:4;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.98);box-shadow:var(--shadow-soft);border:1px solid rgba(207,47,40,.08)}.brand-chip img{width:170px;height:auto;display:block;background:rgba(255,255,255,.98);border-radius:12px;padding:6px 8px}.floating-ingredient{position:absolute;z-index:3;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#fff8dc,#ffd66f);box-shadow:var(--shadow);font-size:1.85rem;color:#6b2506;animation:floaty 4.6s ease-in-out infinite}.floating-ingredient.one{left:-8px;top:16px}.floating-ingredient.two{right:2px;top:12px;animation-delay:1s}.floating-ingredient.three{left:10px;bottom:14px;animation-delay:2s}.floating-ingredient.four{right:-10px;bottom:18px;animation-delay:1.4s}
+.hero-real-photo{position:relative;z-index:2;width:min(100%,500px);height:auto;border-radius:28px;object-fit:cover;filter:drop-shadow(0 24px 50px rgba(115,45,10,.28));animation:chefJump 5s ease-in-out infinite}
+.lifestyle-section{padding-top:0}
+.lifestyle-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.lifestyle-col{display:grid;gap:16px}
+.lifestyle-card{position:relative;border-radius:24px;overflow:hidden;min-height:240px;isolation:isolate}
+.lifestyle-card--tall{min-height:100%}
+.lifestyle-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.lifestyle-card:hover img{transform:scale(1.04)}
+.lifestyle-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:20px;background:linear-gradient(to top, rgba(90,20,8,.68) 0%, transparent 55%)}
+.lifestyle-overlay p{color:#fff;font-weight:800;font-size:1rem;line-height:1.3;letter-spacing:.01em}
+@media(max-width:720px){.lifestyle-grid{grid-template-columns:1fr}.lifestyle-card--tall{min-height:280px}}
 .scroll-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:grid;justify-items:center;gap:8px;color:#9b5d2c;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}.scroll-cue span{width:2px;height:30px;border-radius:99px;background:linear-gradient(var(--naranja),transparent);animation:down 1.5s ease-in-out infinite}.marquee{overflow:hidden;border-block:1px solid rgba(242,181,64,.22);background:linear-gradient(90deg,#fff1c5,#ffd86f,#ffe3a9)}.marquee-track{display:flex;width:max-content;animation:marquee 24s linear infinite}.marquee span{padding:18px 26px;color:#8a3812;font-weight:900;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
 .section-head{display:grid;gap:14px;justify-items:start;max-width:760px;margin-bottom:34px}.section-head h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,4.5rem);line-height:.96;letter-spacing:-.03em;color:#5a1d0f}.section-head p{max-width:64ch;color:var(--muted);font-size:1.03rem;line-height:1.75}
 .card{background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,250,240,.93));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
@@ -74,14 +86,31 @@ body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{
         <div class="hero-actions"><a class="btn btn-primary" href="#menu">Ver menú</a><a class="btn btn-gold" href="#pedir">Pedir por WhatsApp</a><a class="btn btn-ghost" href="#sedes">Ver sedes</a></div>
         <div class="hero-proof" aria-label="Datos destacados"><div class="proof-card"><strong>6</strong><span>Sedes con identidad propia.</span></div><div class="proof-card"><strong>Visual</strong><span>Más emoción desde el primer scroll.</span></div><div class="proof-card"><strong>Directo</strong><span>Pedido por WhatsApp sin enredos.</span></div></div>
       </div>
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="visual-wrap"><div class="pizza-halo"></div><div class="pizza-ring"></div><div class="floating-ingredient one">🍕</div><div class="floating-ingredient two">🧀</div><div class="floating-ingredient three">🍅</div><div class="floating-ingredient four">✨</div><div class="brand-ribbon top"><strong>Super Pizza</strong><span>Sabor con presencia</span></div><div class="brand-ribbon bottom"><strong>Pide fácil</strong><span>WhatsApp por sede</span></div><img class="hero-chef" src="icons/chef-intro.webp" alt="Chef de Super Pizza sosteniendo una pizza" width="410" height="600" style="object-fit:contain;background:transparent;"><div class="brand-chip"><img src="icons/super-pizza-logo.webp" alt="Logo completo de Super Pizza" width="170" height="82" style="object-fit:contain;"></div></div>
+      <div class="hero-visual reveal">
+        <div class="visual-wrap">
+          <div class="pizza-halo"></div>
+          <img class="hero-real-photo" src="6.png" alt="Pizza Súper Pizza con queso derritiéndose" width="560" height="700">
+          <div class="brand-ribbon top"><strong>100% Masa Madurada</strong><span>Sabor italiano auténtico</span></div>
+          <div class="brand-chip"><img src="icons/super-pizza-logo.webp" alt="Logo completo de Super Pizza" width="170" height="82" style="object-fit:contain;"></div>
+        </div>
       </div>
     </div>
     <div class="scroll-cue"><span></span>Desliza</div>
   </header>
-  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Funza · Chía</span><span>Pedido directo por WhatsApp</span><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Funza · Chía</span><span>Pedido directo por WhatsApp</span></div></div>
-  <section class="section" id="menu"><div class="container"><div class="section-head reveal"><span class="badge">Menú visual</span><h2>Elige tu favorita y disfruta el sabor.</h2><p>Explora las opciones disponibles y descubre las pizzas pensadas para compartir, disfrutar y repetir.</p></div><div class="menu-grid reveal"><button class="menu-shot" type="button" data-lightbox="menu1.jpg" aria-label="Abrir primera imagen del menú"><img src="menu1.jpg" alt="Primera imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Imagen 01</small><h3>Sabores que enamoran</h3><p>Un menú pensado para antojar desde el primer vistazo.</p></div></button><button class="menu-shot" type="button" data-lightbox="menu2.jpg" aria-label="Abrir segunda imagen del menú"><img src="menu2.jpg" alt="Segunda imagen del menú actual de Super Pizza" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Imagen 02</small><h3>Más opciones para compartir</h3><p>Toca la imagen para verla mejor y elegir con facilidad.</p></div></button></div></div></section>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Madrid · Funza · Chía</span><span>Pedido directo por WhatsApp</span><span>Super Pizza</span><span>Exquisito sabor italiano</span><span>Mosquera · Madrid · Funza · Chía</span><span>Pedido directo por WhatsApp</span></div></div>
+  <section class="section" id="menu"><div class="container"><div class="section-head reveal"><span class="badge">Menú visual</span><h2>Elige tu favorita y disfruta el sabor.</h2><p>Explora las opciones disponibles y descubre las pizzas pensadas para compartir, disfrutar y repetir.</p></div><div class="menu-grid reveal"><button class="menu-shot" type="button" data-lightbox="5.png" aria-label="Abrir primera imagen del menú"><img src="5.png" alt="Pizza completa Súper Pizza en el local" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Nuestras pizzas</small><h3>Sabores que enamoran</h3><p>Masa madurada, queso que se derrite y toppings irresistibles.</p></div></button><button class="menu-shot" type="button" data-lightbox="4.jpg" aria-label="Abrir segunda imagen del menú"><img src="4.jpg" alt="Detalle de pizza Súper Pizza con queso" loading="lazy" width="900" height="1200"><div class="menu-caption"><small>Detalle de producto</small><h3>Queso que lo dice todo</h3><p>Cada porción es una experiencia. Toca para verla de cerca.</p></div></button></div></div></section>
+  <section class="section lifestyle-section">
+    <div class="container">
+      <div class="section-head reveal"><span class="badge">La experiencia</span><h2>Una pizza para vivir, compartir y repetir.</h2></div>
+      <div class="lifestyle-grid reveal">
+        <div class="lifestyle-card lifestyle-card--tall"><img src="2.png" alt="Modelo con pizza Súper Pizza en Vespa" loading="lazy"><div class="lifestyle-overlay"><p>El sabor que llega a donde estés</p></div></div>
+        <div class="lifestyle-col">
+          <div class="lifestyle-card"><img src="1.png" alt="Persona disfrutando pizza con queso derritiéndose" loading="lazy"><div class="lifestyle-overlay"><p>Antojo real desde el primer bocado</p></div></div>
+          <div class="lifestyle-card"><img src="3.png" alt="Persona disfrutando pizza y bebida en el local" loading="lazy"><div class="lifestyle-overlay"><p>La combinación perfecta</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="sedes"><div class="container"><div class="section-head reveal"><span class="badge">Sedes y pedidos</span><h2>Encuentra tu sede más cercana.</h2><p>Consulta la información de cada punto, revisa la ubicación y pide tu pizza favorita de forma directa.</p></div><div class="sedes-wrap"><div class="sedes-grid" id="sedesGrid"></div></div></div></section>
   <section class="section" id="nosotros"><div class="container story-grid"><article class="story-card card reveal"><span class="badge">Sabor auténtico</span><h3>Pizza hecha para antojar desde el primer vistazo.</h3><p>Una propuesta pensada para compartir, disfrutar y volver a pedir. Cada detalle está enfocado en resaltar el sabor, la frescura y la experiencia de una buena pizza recién hecha.</p><div class="story-pills"><span>Pizza recién hecha</span><span>Ingredientes irresistibles</span><span>Hecho para compartir</span><span>Sabor italiano</span></div></article><aside class="focus-card card reveal"><span class="badge">Lo que encuentras</span><h3>Una carta clara, apetecible y lista para pedir.</h3><p>Desde el menú hasta las sedes, todo está organizado para que encuentres lo que quieres sin perder tiempo y disfrutes una experiencia rápida, clara y deliciosa.</p><div class="focus-stats"><div class="stat"><strong>Menú</strong><span>Opciones listas para elegir.</span></div><div class="stat"><strong>Sedes</strong><span>Ubica la más cercana.</span></div><div class="stat"><strong>Pedido</strong><span>Contacto directo por WhatsApp.</span></div><div class="stat"><strong>Ambiente</strong><span>Diseño cálido y antojable.</span></div></div></aside></div></section>
   <section class="section" id="pedir"><div class="container"><div class="order-band card reveal"><div class="order-copy"><span class="badge">Pedido rápido</span><h2>Pide tu pizza favorita en segundos.</h2><p>Selecciona una sede activa y entra directo a WhatsApp para hacer tu pedido de forma rápida y sencilla.</p></div><div class="order-links" id="orderLinks"></div></div></div></section>
@@ -90,16 +119,46 @@ body.loaded .intro{opacity:0;visibility:hidden;pointer-events:none}.intro-scene{
 <footer class="footer"><div class="container"><img class="footer-logo" src="icons/super-pizza-logo.webp" alt="Super Pizza" width="320" height="160" style="object-fit:contain;"><p>Super Pizza · Sabor italiano para compartir, pedir y disfrutar en cada sede.</p></div></footer>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada del menú"><button class="lightbox-close" type="button" id="closeLightbox" aria-label="Cerrar">✕</button><img id="lightboxImg" src="" alt="Imagen ampliada del menú"></div>
 <script>
+// celulares → WhatsApp + llamada | fijos → solo llamada
 const sedes = [
-  { nombre: "Santa Ana", icono: "🍕", subicono: "📍", ciudad: "Mosquera", telefono: "3123642016", direccion: "Cl. 10 #21-10B, Mosquera, Cundinamarca", mapa: "Cl. 10 #21-10B, Mosquera, Cundinamarca", accent: "linear-gradient(90deg,#ff6a3d,#ffb347)", glow: "rgba(255,122,69,.18)" },
-  { nombre: "Mosquera Centro", icono: "🏛️", subicono: "📍", ciudad: "Mosquera", telefono: "3133597806", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#6d5dfc,#8b7dff)", glow: "rgba(109,93,252,.16)" },
-  { nombre: "Villa Nueva", icono: "🌆", subicono: "📍", ciudad: "Mosquera", telefono: "3133933590", direccion: "Cra. 3 #18-20, Mosquera, Cundinamarca", mapa: "Cra. 3 #18-20, Mosquera, Cundinamarca", accent: "linear-gradient(90deg,#ff5a7a,#ff9f7a)", glow: "rgba(255,90,122,.16)" },
-  { nombre: "La Prosperidad", icono: "🌟", subicono: "📍", ciudad: "Mosquera", telefono: "3202569597", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#f0b429,#ffd86e)", glow: "rgba(240,180,41,.18)" },
-  { nombre: "Funza", icono: "🎈", subicono: "📍", ciudad: "Funza", telefono: "3209355962", direccion: "Ubicación próximamente", mapa: "", accent: "linear-gradient(90deg,#ff4f81,#ff7aa2)", glow: "rgba(255,79,129,.16)" },
-  { nombre: "Chía", icono: "🌙", subicono: "📍", ciudad: "Chía", telefono: "", direccion: "Próximamente", mapa: "", accent: "linear-gradient(90deg,#6f63ff,#8d86ff)", glow: "rgba(111,99,255,.16)" }
+  { nombre:"Santa Ana",       icono:"🍕", subicono:"📍", ciudad:"Mosquera", celulares:["3123642016"],             fijos:["6018295496"],  direccion:"Cl. 10 #10B-21, Mosquera, Cundinamarca",     mapa:"Calle 10 10B-21, Mosquera, Cundinamarca",   accent:"linear-gradient(90deg,#ff6a3d,#ffb347)", glow:"rgba(255,122,69,.18)" },
+  { nombre:"Mosquera Centro", icono:"🏛️", subicono:"📍", ciudad:"Mosquera", celulares:["3133597806"],             fijos:["6018938213"],  direccion:"Cra. 3 #2-01, Mosquera, Cundinamarca",        mapa:"Carrera 3 2-01, Mosquera, Cundinamarca",    accent:"linear-gradient(90deg,#6d5dfc,#8b7dff)", glow:"rgba(109,93,252,.16)" },
+  { nombre:"Villa Nueva",     icono:"🌆", subicono:"📍", ciudad:"Mosquera", celulares:["3213101242","3133933590"], fijos:[],              direccion:"Cra. 3 #18-20, Mosquera, Cundinamarca",       mapa:"Cra. 3 #18-20, Mosquera, Cundinamarca",     accent:"linear-gradient(90deg,#ff5a7a,#ff9f7a)", glow:"rgba(255,90,122,.16)" },
+  { nombre:"La Prosperidad",  icono:"🌟", subicono:"📍", ciudad:"Madrid",   celulares:["3202569597","3202560743"], fijos:[],              direccion:"Cra. 23 #1-6 Sur, Madrid, Cundinamarca",      mapa:"Carrera 23 1-6 Sur, Madrid, Cundinamarca",  accent:"linear-gradient(90deg,#f0b429,#ffd86e)", glow:"rgba(240,180,41,.18)" },
+  { nombre:"Funza",           icono:"🎈", subicono:"📍", ciudad:"Funza",    celulares:["3209355962"],             fijos:[],              direccion:"Cl. 23a #2B BIS-19, Funza, Cundinamarca",     mapa:"Calle 23a 2B BIS-19, Funza, Cundinamarca",  accent:"linear-gradient(90deg,#ff4f81,#ff7aa2)", glow:"rgba(255,79,129,.16)" },
+  { nombre:"Chía",            icono:"🌙", subicono:"📍", ciudad:"Chía",     celulares:[],                         fijos:[],              direccion:"Cl. 10 #11-2, Chía, Cundinamarca",             mapa:"Calle 10 11-2, Chía, Cundinamarca",         accent:"linear-gradient(90deg,#6f63ff,#8d86ff)", glow:"rgba(111,99,255,.16)" }
 ];
-function waLink(sede){ const mensaje = `Hola, quiero hacer un pedido en la sede ${sede.nombre} de Super Pizza.`; return `https://wa.me/57${sede.telefono}?text=${encodeURIComponent(mensaje)}`; }
+
+const ICON_WA   = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.882a.5.5 0 0 0 .614.612l6.224-1.634A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 0 1-5.023-1.384l-.36-.214-3.733.98.997-3.648-.234-.374A9.794 9.794 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>`;
+const ICON_CALL = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.07 6.07l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+
+function waLink(num){ return `https://wa.me/57${num}?text=${encodeURIComponent('Hola, quiero hacer un pedido en Super Pizza 🍕')}`; }
+function callLink(num){ return `tel:+57${num}`; }
 function mapLink(query){ return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`; }
+
+function buildContactInfo(sede){
+  // info row: list all numbers with type label
+  const all = sede.celulares.map(t=>`${t} <em style="font-size:.78rem;color:#b06030;font-style:normal;font-weight:700">cel</em>`)
+                .concat(sede.fijos.map(t=>`${t} <em style="font-size:.78rem;color:#b06030;font-style:normal;font-weight:700">fijo</em>`));
+  return all.length ? all.join(' &nbsp;·&nbsp; ') : 'Próximamente';
+}
+
+function buildButtons(sede){
+  let btns = '';
+  // WhatsApp buttons (celulares only)
+  sede.celulares.forEach((t, i) => {
+    const label = sede.celulares.length > 1 ? `WhatsApp · Opción ${i + 1}` : 'WhatsApp';
+    btns += `<a class="btn btn-wa" href="${waLink(t)}" target="_blank" rel="noopener noreferrer">${ICON_WA} ${label}</a>`;
+  });
+  // Call-only buttons (fijos)
+  sede.fijos.forEach(t => {
+    btns += `<a class="btn btn-call" href="${callLink(t)}" rel="noopener noreferrer">${ICON_CALL} ${t}</a>`;
+  });
+  // Fallback if nothing
+  if(!btns) btns = `<span class="btn btn-ghost" aria-disabled="true" style="flex:1 1 100%">Contacto próximamente</span>`;
+  return btns;
+}
+
 function renderSedes(){
   const sedesGrid = document.getElementById('sedesGrid');
   const orderLinks = document.getElementById('orderLinks');
@@ -107,22 +166,22 @@ function renderSedes(){
     <article class="sede card reveal" style="transition-delay:${index * 55}ms;--accent:${sede.accent};--glow:${sede.glow};">
       <div class="sede-top">
         <div class="sede-icon" aria-hidden="true">${sede.icono}</div>
-        <span class="sede-status">${sede.telefono ? 'Pedido activo' : 'Próximamente'}</span>
+        <span class="sede-status">${sede.celulares.length ? 'Pedido activo' : 'Próximamente'}</span>
       </div>
       <h3>SEDE ${sede.nombre.toUpperCase()}</h3>
       <div class="sede-sub"><span>${sede.subicono}</span><span>${sede.ciudad}</span></div>
       <div class="sede-info">
         <div class="info-row"><span class="emoji">🗺️</span><span>${sede.direccion}</span></div>
         <div class="info-row"><span class="emoji">🕛</span><span>Atendemos desde las 12:00 p. m.</span></div>
-        <div class="info-row"><span class="emoji">📲</span><span>${sede.telefono ? `WhatsApp: ${sede.telefono}` : 'WhatsApp: próximamente'}</span></div>
+        <div class="info-row"><span class="emoji">📞</span><span>${buildContactInfo(sede)}</span></div>
       </div>
       <div class="sede-actions">
-        ${sede.telefono ? `<a class="btn btn-wa" href="${waLink(sede)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>` : `<span class="btn btn-ghost" aria-disabled="true">WhatsApp próximamente</span>`}
-        ${sede.mapa ? `<a class="btn btn-ghost" href="${mapLink(sede.mapa)}" target="_blank" rel="noopener noreferrer">Mapa</a>` : `<span class="btn btn-ghost" aria-disabled="true">Ubicación próximamente</span>`}
+        ${buildButtons(sede)}
+        ${sede.mapa ? `<a class="btn btn-ghost" href="${mapLink(sede.mapa)}" target="_blank" rel="noopener noreferrer">📍 Mapa</a>` : `<span class="btn btn-ghost" aria-disabled="true">Ubicación próximamente</span>`}
       </div>
     </article>
   `).join('');
-  orderLinks.innerHTML = sedes.map(sede => sede.telefono ? `<a class="order-link" href="${waLink(sede)}" target="_blank" rel="noopener noreferrer"><span><strong>${sede.icono} ${sede.nombre}</strong><small>${sede.ciudad}</small></span><span>↗</span></a>` : `<div class="order-link" aria-disabled="true"><span><strong>${sede.icono} ${sede.nombre}</strong><small>Próximamente</small></span><span>—</span></div>`).join('');
+  orderLinks.innerHTML = sedes.map(sede => sede.celulares.length ? `<a class="order-link" href="${waLink(sede.celulares[0])}" target="_blank" rel="noopener noreferrer"><span><strong>${sede.icono} ${sede.nombre}</strong><small>${sede.ciudad}</small></span><span>↗</span></a>` : `<div class="order-link" aria-disabled="true"><span><strong>${sede.icono} ${sede.nombre}</strong><small>Próximamente</small></span><span>—</span></div>`).join('');
   setupReveal();
 }
 function startIntro(){ const finish = () => document.body.classList.add('loaded'); const skip = document.getElementById('skipIntro'); window.setTimeout(finish, 1450); skip.addEventListener('click', finish); window.addEventListener('load', () => window.setTimeout(finish, 950)); }
